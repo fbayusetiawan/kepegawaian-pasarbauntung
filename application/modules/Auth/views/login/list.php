@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Login - SIMPEG Dinas Perindustrian dan Perdagangan</title>
+    <title>Login - UPT Pasar Bauntung Banjarbaru</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/dinas.png">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/logobjb.png">
 
     <!-- App css -->
     <link href="<?= base_url() ?>assets/css/bootstrap-dark.min.css" rel="stylesheet" type="text/css" />
@@ -31,16 +31,15 @@
                                 <div class="col-md-12 p-5">
                                     <div class="mx-auto mb-3">
                                         <a href="">
-                                            <img src="<?= base_url() ?>assets/images/dinas.png" class="mx-auto d-block" alt="" height="150" />
-                                            <h3 class=" align-middle ml-1 text-center text-logo">SIMPEG Dinas Perindustrian dan Perdagangan</h3>
-                                            <h5 class=" align-middle ml-1 text-center text-logo">Kota Banjarmasin</h5>
+                                            <img src="<?= base_url() ?>assets/images/logobjb.png" class="mx-auto d-block" alt="" height="150" />
+                                            <h3 class=" align-middle ml-1 text-center text-logo">UPT Pasar Bauntung </h3>
+                                            <h5 class=" align-middle ml-1 text-center text-logo">Kota Banjarbaru</h5>
                                         </a>
                                     </div>
                                     <?= $this->session->flashdata('message'); ?>
 
-                                    <h6 class="h5 mb-0 mt-4">Welcome back!</h6>
-                                    <p class="text-muted mt-1 mb-4">Enter your Username and password to
-                                        access Home.</p>
+                                    <h6 class="h5 mb-0 mt-4">Selamat Datang</h6>
+                                    <p class="text-muted mt-1 mb-4">Silahkan masukkan username dan password untuk mengakses</p>
 
                                     <form action="<?= base_url('auth/login/logon') ?>" method="post" class="authentication-form">
                                         <div class="form-group">

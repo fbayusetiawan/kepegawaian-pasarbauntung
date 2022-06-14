@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>SIMPEG - DINAS PERINDUSTRIAN DAN PERDAGANGAN KOTA BANJARMASIN</title>
+    <title>SIMPEG - UPT PASAR BAUNTUNG BANJARBARU</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/dinas.png">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/logobjb.png">
 
     <!-- plugins -->
     <!-- <link href="<?= base_url() ?>assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" /> -->
@@ -39,7 +39,7 @@
                 <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
                     <span class="logo-lg">
                         <!-- <img src="<?= base_url() ?>assets/images/logo/logo1.png" alt="" height="50" /> -->
-                        <span class="d-inline h5 ml-1 text-logo">SIMPEG DINAS PERINDUSTRIAN DAN PERDAGANGAN KOTA BANJARMASIN</span>
+                        <span class="d-inline h5 ml-1 text-logo">SIMPEG UPT PASAR BAUNTUNG BANJARBARU</span>
                     </span>
                     <span class="logo-sm">
                         <!-- <img src="<?= base_url() ?>assets/images/logo1.png" alt="" height="24"> -->
@@ -95,7 +95,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            2022 &copy; SIMPEG Dinas Perindustrian dan Perdagangan. All Rights Reserved. Crafted with <i class='uil uil-heart text-danger font-size-12'></i>
+                            2022 &copy; SIMPEG UPT Pasar Bauntung Kota Banjarbaru. All Rights Reserved.
                         </div>
                     </div>
                 </div>

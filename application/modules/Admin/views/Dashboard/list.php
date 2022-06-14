@@ -9,7 +9,7 @@ $user = $this->db->get('user')->row();
 
             <div class="card-body p-0">
 
-                <h6 class="card-title border-bottom p-3 mb-0 header-title">Selamat Datang <i> </i>di Website SIMPEG Dinas Perindustrian dan Perdagangan</h6>
+                <h6 class="card-title border-bottom p-3 mb-0 header-title">Selamat Datang <i> </i>di Website SIMPEG UPT Pasar Bauntung Kota Banjarbaru</h6>
                 <div class="row py-1">
                     <div class="col-xl-3 col-sm-6">
                         <!-- stat 1 -->
@@ -28,7 +28,7 @@ $user = $this->db->get('user')->row();
                             <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
                             <div class="media-body">
                                 <h4 class="mt-0 mb-0"><?= $cuti  ?></h4>
-                                <span class="text-muted">Total Pegawai Aktif Cuti</span>
+                                <span class="text-muted">Total Tenaga Honorer</span>
                             </div>
                         </div>
                     </div>

@@ -19,10 +19,10 @@ $now = date('Y-m-d');
 <body>
     <p align="center">
         <b>
-            <img src="<?= base_url() ?>/assets/images/dinas.png" align="left" width="65">
-            <font size="4">PEMERINTAH KOTA BANJARMASIN</font> <br>
-            <font size="5">DINAS PERINDUSTRIAN DAN PERDAGANGAN</font> <br>
-            Jl. Brigjend. H. Hasan Baseri. Komplek Simp. Sei, Gg. Tangga Jalur II No.03, Alalak Utara, Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan 70125
+            <img src="<?= base_url() ?>/assets/images/logobjb.png" align="left" width="65">
+            <font size="4">PEMERINTAH KOTA BANJABARU</font> <br>
+            <font size="5">UPT PASAR BAUNTUNG</font> <br>
+            Jl. Panglima Batur Barat No.08, Loktabat Utara, Kec. Banjarbaru Utara, Kota Banjar Baru, Kalimantan Selatan 70714
         </b><br>
     </p>
     <hr size="1px" color="black">
@@ -79,17 +79,17 @@ $now = date('Y-m-d');
         <tr>
             <td width="40%"></td>
             <td width="20%"></td>
-            <td align="center">Banjarmasin, <?= tgl_indo($now) ?></td>
+            <td align="center">Banjarbaru, <?= tgl_indo($now) ?></td>
         </tr>
         <tr>
             <td align="center"><br><br><br></td>
             <td></td>
-            <td align="center">Kepala Dinas <br><br><br></td>
+            <td align="center">Kepala UPT<br><br><br></td>
         </tr>
         <tr>
             <td align="center"></td>
             <td></td>
-            <td align="center">dr. Sukotjo Hartono <br> NIP. 198011252000121003</td>
+            <td align="center">Adi Royan Pratama, ST <br> NIP. 198011252000121003</td>
         </tr>
     </table>
 </body>
