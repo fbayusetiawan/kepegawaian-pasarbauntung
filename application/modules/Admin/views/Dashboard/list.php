@@ -13,25 +13,35 @@ $user = $this->db->get('user')->row();
                 <div class="row py-1">
                     <div class="col-xl-3 col-sm-6">
                         <!-- stat 1 -->
-
                         <div class="media p-3">
                             <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
                             <div class="media-body">
                                 <h4 class="mt-0 mb-0"><?= $pegawai  ?></h4>
-                                <span class="text-muted font-size-13">Total Pegawai</span>
+                                <span class="text-muted font-size-13">Total Pegawai PNS</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6">
-                        <!-- stat 2 -->
+                        <!-- stat 1 -->
                         <div class="media p-3">
                             <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
                             <div class="media-body">
-                                <h4 class="mt-0 mb-0"><?= $cuti  ?></h4>
-                                <span class="text-muted">Total Tenaga Honorer</span>
+                                <h4 class="mt-0 mb-0"><?= $pegawai2  ?></h4>
+                                <span class="text-muted font-size-13">Total Pegawai Tetap</span>
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <!-- stat 1 -->
+                        <div class="media p-3">
+                            <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
+                            <div class="media-body">
+                                <h4 class="mt-0 mb-0"><?= $pegawai3  ?></h4>
+                                <span class="text-muted font-size-13">Total Tenaga Honorer </span>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="col-xl-3 col-sm-6">
                         <!-- stat 3 -->
                         <div class="media p-3">

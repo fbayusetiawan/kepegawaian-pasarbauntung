@@ -8,6 +8,21 @@ class Dashboard_m extends CI_Model
     function getPegawaiAktif()
     {
         $this->db->where('isActive', '1');
+        $this->db->where('statusKepegawaian', '1');
+        return $this->db->get('pegawai')->num_rows();
+    }
+
+    function getPegawaiAktif2()
+    {
+        $this->db->where('isActive', '1');
+        $this->db->where('statusKepegawaian', '2');
+        return $this->db->get('pegawai')->num_rows();
+    }
+    
+    function getPegawaiAktif3()
+    {
+        $this->db->where('isActive', '1');
+        $this->db->where('statusKepegawaian', '3');
         return $this->db->get('pegawai')->num_rows();
     }
 
