@@ -24,10 +24,10 @@ $now = date('Y-m-d');
 <body>
     <p align="center">
         <b>
-            <img src="<?= base_url() ?>/assets/images/logo.png" align="left" width="65">
-            <font size="4">RUMAH SAKIT UMUM DAERAH</font> <br>
-            <font size="5">SULTAN SURIANSYAH</font> <br>
-            Jl. Rantauan Darat, Kelayan Sel., Kec. Banjarmasin Sel., Kota Banjarmasin, Kalimantan Selatan 70234
+            <img src="<?= base_url() ?>/assets/images/logobjb.png" align="left" width="65">
+            <font size="4">PEMERINTAH KOTA BANJABARU</font> <br>
+            <font size="5">UPT PASAR BAUNTUNG</font> <br>
+            Jl. Panglima Batur Barat No.08, Loktabat Utara, Kec. Banjarbaru Utara, Kota Banjar Baru, Kalimantan Selatan 70714
         </b><br>
     </p>
     <hr size="1px" color="black">
@@ -37,14 +37,14 @@ $now = date('Y-m-d');
             <U>
                 <FONT size="4">SURAT TEGURAN</FONT>
             </U> <br>
-            <FONT size="3">NOMOR <?= $row->ns ?>/MP/<?= $row->br ?>/<?= $row->ts ?></FONT> <br><br><br>
+            <FONT size="3">NOMOR <?= $row->ns ?>/ST/<?= $row->br ?>/<?= $row->ts ?></FONT> <br><br><br>
         </b>
     </p>
     <br>
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
-                Direktur Rumah Sakit Umum Daerah Sultan Suriansyah memandang perlu mengeluarkan surat teguran kepada:
+                Kepala UPT Pasar Bauntung Banjarbaru memandang perlu mengeluarkan surat teguran kepada:
                 <table cellspacing="0" width="100%">
 
                     <tr>
@@ -79,17 +79,17 @@ $now = date('Y-m-d');
         <tr>
             <td width="40%"></td>
             <td width="20%"></td>
-            <td align="center">Banjarmasin, <?= tgl_indo($now) ?></td>
+            <td align="center">Banjarbaru, <?= tgl_indo($now) ?></td>
         </tr>
         <tr>
             <td align="center"><br><br><br></td>
             <td></td>
-            <td align="center">Direktur <br><br><br></td>
+            <td align="center">Kepala UPT<br><br><br></td>
         </tr>
         <tr>
             <td align="center"></td>
             <td></td>
-            <td align="center">dr. Sukotjo Hartono <br> NIP. 198011252000121003</td>
+            <td align="center">Adi Royan Pratama, ST <br> NIP. 198011252000121003</td>
         </tr>
     </table>
 </body>

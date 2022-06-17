@@ -37,11 +37,11 @@ $now = date('Y-m-d');
             <U>
                 <FONT size="4">SURAT KEPUTUSAN</FONT>
             </U> <br>
-            <FONT size="3">NOMOR <?= $row->ns ?>/SK/UPTBAUNTUNG/<?= $row->br ?>/<?= $row->ts ?></FONT> <br><br>
-            TENTANG <br><br>
-            KENAIKAN PANGKAT PEGAWAI UPT PASAR BAUNTUNG BANJARBARU <br>
+            <FONT size="3">NOMOR 00/SK/UPTBAUNTUNG/br/ts</FONT> <br><br><br>
+            TENTANG <br><br><br>
+            PENETAPAN PEGAWAI DI UPT PASAR BAUNTUNG BANJARBARU <br>
 
-            KEPALA UPT PASAR BAUNTUNG BANJARBARU
+            KEPALA UPT PASAR BAUNTUNG
         </b>
     </p>
 
@@ -49,17 +49,17 @@ $now = date('Y-m-d');
         <div class="col-sm">
             <div class="card-box table-responsive">
                 <br>
-                
+                <br><br><br>
                 <table cellspacing="0" width="100%">
                     <tr>
                         <td valign="top">Menimbang:</td>
                         <td valign="top">a.</td>
-                        <td>Bahwa agar dalam pelaksanaan kenaikan pangkat pegawai di UPT Pasar Bauntung Banjarbaru dapat terlaksana dengan baik, maka perlu adanya kebijakan kenaikan pangkat pegawai di UPT Pasar Bauntung Banjarbaru;</td>
+                        <td>Bahwa agar dalam pelaksanaan kenaikan pangkat pegawai di Dinas Perindustrian dan Perdagangan dapat terlaksana dengan baik, maka perlu adanya kebijakan kenaikan pangkat pegawai di Dinas Perindustrian dan Perdagangan;</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td valign="top">b.</td>
-                        <td>Bahwa Berdasarkan pertimbangan sebagaimana dimaksud dalam butir a perlu adanya kebijakan kenaikan pangkat pegawai di UPT Pasar Bauntung Banjarbaru dengan surat keputusan UPT Pasar Bauntung Banjarbaru.</td>
+                        <td>Bahwa Berdasarkan pertimbangan sebagaimana dimaksud dalam butir a perlu adanya kebijakan kenaikan pangkat pegawai di Dinas Perindustrian dan Perdagangan dengan surat keputusan Dinas Perindustrian dan Perdagangan.</td>
                     </tr>
 
                 </table> <br>
@@ -94,9 +94,9 @@ $now = date('Y-m-d');
                         <td valign="top">6.</td>
                         <td>Keputusan Menteri Perindustrian dan Perdagangan Nomor 444/MPP/Kep/9/1998 jo. Nomor 24/MPP/Kep/1/1999 tentang Organisasi dan Tatakerja Departemen Perindustrian dan Perdagangan.;</td>
                     </tr>
-                </table><br>
+                </table><br><br>
                 <p class="text-center">MEMUTUSKAN:</p>
-                
+                <br><br>
                 <table cellspacing="0" width="100%">
                     <tr>
                         <td>Menetapkan</td>
@@ -106,28 +106,28 @@ $now = date('Y-m-d');
                     <tr>
                         <td valign="top">KESATU</td>
                         <td valign="top">:</td>
-                        <td colspan="3">Pegawai UPT Pasar Bauntung Banjarbaru tersebut dibawah ini:</td>
+                        <td colspan="3">Pegawai Dinas Perindustrian dan Perdagangan tersebut dibawah ini:</td>
                     </tr>
                     <tr>
                         <td valign="top"></td>
                         <td valign="top"></td>
                         <td>Nama</td>
                         <td>:</td>
-                        <td><?= $row->namaPegawai ?></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td valign="top"></td>
                         <td valign="top"></td>
                         <td>Nomer Induk Pegawai</td>
                         <td>:</td>
-                        <td><?= $row->noIndukKepegawaian ?></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td valign="top"></td>
                         <td valign="top"></td>
                         <td>Tempat, Tanggal Lahir</td>
                         <td>:</td>
-                        <td><?= $row->tempatLahir . ', ' . tgl_indo($row->tanggalLahir) ?></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td valign="top"></td>
@@ -141,19 +141,19 @@ $now = date('Y-m-d');
                         <td valign="top"></td>
                         <td>Pangkat/Golongan</td>
                         <td>:</td>
-                        <td><?= $row->namaPangkat . '/' . $row->namaGolongan ?></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td valign="top"></td>
                         <td valign="top"></td>
                         <td>Unit Kerja</td>
                         <td>:</td>
-                        <td><?= $row->namaDevisi ?></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td valign="top"></td>
                         <td valign="top"></td>
-                        <td colspan="3">Terhitung mulai tanggal <?= tgl_indo($row->tanggalDitetapkan) ?> Naik Pangkat Menjadi <b><?= $row->namaPangkatDitetapkan . '/' . $row->namaGolonganDitetapkan ?></b></td>
+                        <td colspan="3">Terhitung mulai tanggal  Naik Pangkat Menjadi <b></b></td>
                     </tr>
                     <tr>
                         <td valign="top">KEDUA</td>
@@ -190,7 +190,7 @@ $now = date('Y-m-d');
         <tr>
             <td align="center"></td>
             <td></td>
-            <td align="center">Adi Royan Pratama, ST <br> NIP. 198011252000121003</td>
+            <td align="center"><u>Adi Royan Pratama, ST</u><br> NIP. 198011252000121003</td>
         </tr>
     </table>
 </body>

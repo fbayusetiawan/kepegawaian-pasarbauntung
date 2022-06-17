@@ -39,31 +39,17 @@ $ctrl = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Pangkat/Golongan</label>
-                        <input type="text" name="pangkatgoongan" id="pg" readonly class="form-control" required>
+                        <label for="validationCustom01">Status Sekarang</label>
+                        <input type="text" name="sekpeg" id="sekpeg" readonly class="form-control" required>
                         <div class="invalid-feedback">
                             Harus di isi.
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Devisi</label>
-                        <input type="text" name="devisi" id="devisi" class="form-control" required>
+                        <label for="validationCustom01">Menjadi </label>
+                        <?= form_dropdown('statusKepegawaian', fd_kepegawaian(), '', 'class="form-control"') ?>
                         <div class="invalid-feedback">
-                            Harus di isi.
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Naik Pangkat Menjadi</label>
-                        <div class="row">
-                            <div class="col-6">
-                                <?= cmb_dinamis('pangkatDitetapkan', 'pangkat', 'namaPangkat', 'idPangkat') ?>
-                            </div>
-                            <div class="col-6">
-                                <?= cmb_dinamis('golonganDitetapkan', 'golongan', 'namaGolongan', 'idGolongan') ?>
-                            </div>
-                        </div>
-                        <div class="invalid-feedback">
-                            Harus di isi.
+                            Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
@@ -86,15 +72,16 @@ $ctrl = $this->uri->segment(1) . '/' . $this->uri->segment(2);
     function getpegawai() {
         var nik = $("#nikid").val();
         $.ajax({
-            url: '<?= base_url("Admin/Naikpangkat/ajaxpegawai") ?>',
+            url: '<?= base_url("Admin/Naikpegawai/ajaxpegawai") ?>',
             data: "nik=" + nik,
             success: function(data) {
                 var json = data,
                     obj = JSON.parse(json);
                 $('#namapegawai').val(obj.namapegawai);
                 $('#ttl').val(obj.ttl);
-                $('#pg').val(obj.pangkatgolongan);
-                $('#devisi').val(obj.devisi);
+                $('#sekpeg').val(obj.sekpeg);
+                // $('#devisi').val(obj.devisi);
+                console.log(obj)
             }
         })
     }

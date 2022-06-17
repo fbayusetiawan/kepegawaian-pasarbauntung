@@ -24,10 +24,10 @@ $now = date('Y-m-d');
 <body>
     <p align="center">
         <b>
-            <img src="<?= base_url() ?>/assets/images/dinas.png" align="left" width="65">
-            <font size="4">PEMERINTAH KOTA BANJARMASIN</font> <br>
-            <font size="5">DINAS PERINDUSTRIAN DAN PERDAGANGAN</font> <br>
-            Jl. Brigjend. H. Hasan Baseri. Komplek Simp. Sei, Gg. Tangga Jalur II No.03, Alalak Utara, Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan 70125
+            <img src="<?= base_url() ?>/assets/images/logobjb.png" align="left" width="65">
+            <font size="4">PEMERINTAH KOTA BANJABARU</font> <br>
+            <font size="5">UPT PASAR BAUNTUNG</font> <br>
+            Jl. Panglima Batur Barat No.08, Loktabat Utara, Kec. Banjarbaru Utara, Kota Banjar Baru, Kalimantan Selatan 70714
         </b><br>
     </p>
     <hr size="1px" color="black">
@@ -37,7 +37,7 @@ $now = date('Y-m-d');
             <U>
                 <FONT size="4">SURAT AKTIF KEMBALI</FONT>
             </U> <br>
-            <FONT size="3">NOMOR <?= $row->ns ?>/SAK/DISPERDAGIN/<?= $row->br ?>/<?= $row->ts ?></FONT> <br><br><br>
+            <FONT size="3">NOMOR <?= $row->ns ?>/SAK/UPTBAUNTUNG/<?= $row->br ?>/<?= $row->ts ?></FONT> <br><br><br>
         </b>
     </p>
     <br>
@@ -45,7 +45,7 @@ $now = date('Y-m-d');
         <div class="col-sm-12">
             <div class="card-box table-responsive">
                 Berhubungan dengan habisnya masa cuti yang diberikan,
-                Kepala Dinas Perindustrian dan Perdagangan Kota Banjarmasin dengan ini menyatakan bahwa:
+                Kepala UPT Pasar Bauntung Banjarbaru dengan ini menyatakan bahwa:
                 <br>
                 <table cellspacing="0" width="100%">
 
@@ -76,8 +76,8 @@ $now = date('Y-m-d');
                     </tr>
                 </table>
                 <br>
-                Telah <b>AKTIF</b> kembali bekerja di Dinas Perindustrian dan Perdagangan.
-                demikian surat pemberitahuan ini, agar dapat digunakan sebagai mana mestinya.
+                Telah <b>AKTIF</b> kembali bekerja di UPT Pasar Bauntung Banjarbaru.
+                Demikian surat pemberitahuan ini, agar dapat digunakan sebagai mana mestinya.
             </div>
         </div>
     </div>
@@ -88,17 +88,17 @@ $now = date('Y-m-d');
         <tr>
             <td width="40%"></td>
             <td width="20%"></td>
-            <td align="center">Banjarmasin, <?= tgl_indo($now) ?></td>
+            <td align="center">Banjarbaru, <?= tgl_indo($now) ?></td>
         </tr>
         <tr>
             <td align="center"><br><br><br></td>
             <td></td>
-            <td align="center">Kepala Dinas <br><br><br></td>
+            <td align="center">Kepala UPT<br><br><br></td>
         </tr>
         <tr>
             <td align="center"></td>
             <td></td>
-            <td align="center">dr. Sukotjo Hartono <br> NIP. 198011252000121003</td>
+            <td align="center"><u>Adi Royan Pratama, ST</u><br> NIP. 198011252000121003</td>
         </tr>
     </table>
 </body>

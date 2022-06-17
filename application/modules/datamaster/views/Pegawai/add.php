@@ -63,7 +63,7 @@ $id = uniqid()
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Status Kepegawaian </label>
-                        <?= form_dropdown('statusKepegawaian', fd_kepegawaian(), '', 'class="form-control"') ?>
+                        <?= form_dropdown('statusKepegawaian', fd_kepegawaian(), '', 'class="form-control" id="kerja" onchange="getKerja()"') ?>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
@@ -138,6 +138,7 @@ $id = uniqid()
                             Harus diisi!
                         </div>
                     </div>
+                    <div id="selesaikerja"></div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Username <small id="info"></small> </label>
                         <input type="text" class="form-control" onkeyup="cekUser()" id="username" minlength="6" name="username" required>
@@ -189,6 +190,18 @@ $id = uniqid()
             data: "user=" + user,
             success: function(data) {
                 $('#info').html(data)
+            }
+        })
+    }
+
+    function getKerja() {
+        var d = $("#kerja").val()
+        $.ajax({
+            type: 'Get',
+            url: '<?= base_url($linkin . "/getKerja") ?>',
+            data: 'd=' + d,
+            success: function(data) {
+                $('#selesaikerja').html(data)
             }
         })
     }

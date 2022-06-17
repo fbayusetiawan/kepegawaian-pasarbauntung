@@ -154,8 +154,8 @@ function fd_kepegawaian($val = null)
 {
     $option = [
         '1' => 'PNS',
-        '2' => 'Non PNS',
-        '3' => 'Lainnya',
+        '2' => 'Pegawai Tetap',
+        '3' => 'Tenaga Honorer',
     ];
     if (empty($val)) :
         return $option;

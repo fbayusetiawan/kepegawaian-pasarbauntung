@@ -58,7 +58,7 @@ $now = date('Y-m-d');
                                 <td><?= $row->namaDevisi ?></td>
                                 <td><?= $row->kesalahan ?></td>
                                 <td><?= $row->hukuman ?></td>
-                                <td><?= $row->tanggalTeguran ?></td>
+                                <td><?= tgl_indo($row->tanggalTeguran) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

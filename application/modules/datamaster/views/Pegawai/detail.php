@@ -70,6 +70,25 @@ $no = '1';
                         <th>Nomer WhatsApp</th>
                         <th>: <?= $row->noWa ?></th>
                     </tr>
+                    <!-- <tr>
+                        <th>Masa Bekerja</th>
+                        <th>:
+                            <?php if (empty($row->tanggalSelesai)) : ?>
+                                <?= tgl_indo($row->tanggalMulaiBekerja) ?>
+                            <?php else : ?>
+                                <?= tgl_indo($row->tanggalMulaiBekerja) ?> sampai <?= tgl_indo($row->tanggalSelesai) ?>
+                            <?php endif; ?> </th>
+                    </tr> -->
+                    <tr>
+                        <th>Masa Bekerja</th>
+                        <th>:
+                            <?php if ($row->statusKepegawaian == 1 || $row->statusKepegawaian == 2)  { 
+                                echo tgl_indo($row->tanggalMulaiBekerja);
+                            } else {
+                                echo tgl_indo($row->tanggalMulaiBekerja) . ' sampai ' . tgl_indo($row->tanggalSelesai);
+                            } ?>
+                            
+                    </tr>
                 </table>
 
             </div> <!-- end card body-->
