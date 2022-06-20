@@ -154,12 +154,12 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <li>
                                 <a href="#m_prestasi" data-toggle="modal">Prestasi</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#m_mutasi" data-toggle="modal">Mutasi</a>
                             </li>
                             <li>
                                 <a href="#m_gaji" data-toggle="modal">Rekap Gaji</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="#m_teguran" data-toggle="modal">Teguran</a>
                             </li>
@@ -167,40 +167,32 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                     </li>
                     <li class="menu-title">Master Data</li>
                     <li>
-                        <a href="<?= base_url('Datamaster/Pegawai') ?>">
-                            <i data-feather="users"></i>
-                            <span> Pegawai </span>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Kepegawaian </span>
+                            <span class="menu-arrow"></span>
                         </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Datamaster/Pangkat') ?>">
-                            <i data-feather="briefcase"></i>
-                            <span> Pangkat </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Datamaster/Golongan') ?>">
-                            <i data-feather="command"></i>
-                            <span> Golongan </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Datamaster/Departemen') ?>">
-                            <i data-feather="grid"></i>
-                            <span> Departemen </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Datamaster/Devisi') ?>">
-                            <i data-feather="home"></i>
-                            <span> Devisi </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Datamaster/Jabatan') ?>">
-                            <i data-feather="codesandbox"></i>
-                            <span> Jabatan </span>
-                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= base_url('Datamaster/Pegawai') ?>">Pegawai</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Pangkat') ?>">Pangkat</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Golongan') ?>">Golongan</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Departemen') ?>">Departemen</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Devisi') ?>">Divisi</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Jabatan') ?>">Jabatan</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="<?= base_url('Datamaster/Users') ?>">

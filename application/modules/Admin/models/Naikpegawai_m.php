@@ -10,9 +10,9 @@ class Naikpegawai_m extends CI_Model
 
     function getAllData()
     {
-        $this->db->join('pegawai', 'pegawai.nik = naikpangkat.nik', 'left');
-        $this->db->join('pangkat', 'pangkat.idPangkat = naikpangkat.pangkatDitetapkan', 'left');
-        $this->db->join('golongan', 'golongan.idGolongan = naikpangkat.golonganDitetapkan', 'left');
+        $this->db->join('pegawai', 'pegawai.nik = naikpegawai.nik', 'left');
+        // $this->db->join('pangkat', 'pangkat.idPangkat = naikpegawai.pangkatDitetapkan', 'left');
+        // $this->db->join('golongan', 'golongan.idGolongan = naikpegawai.golonganDitetapkan', 'left');
         $this->db->join('devisi', 'devisi.idDevisi = pegawai.idDevisi', 'left');
         return $this->db->get($this->namaTable)->result();
     }
@@ -36,14 +36,13 @@ class Naikpegawai_m extends CI_Model
     function save()
     {
         $object = [
-            'idNaikPangkat' => uniqid(),
+            'idNaikPegawai' => uniqid(),
             'nik' => $this->input->post('nik', TRUE),
             'tanggalDitetapkan' => $this->input->post('tanggalDitetapkan', TRUE),
             'statusKepegawaian' => $this->input->post('statusKepegawaian', TRUE),
             'ns' => noOtomatis('ns', 'ns', 'naikpegawai'),
             'br' => getRomawi(date('n')),
             'ts' => date('Y'),
-
         ];
         $this->db->insert($this->namaTable, $object);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan</div>');
@@ -54,8 +53,7 @@ class Naikpegawai_m extends CI_Model
         $object = [
             'nik' => $this->input->post('nik', TRUE),
             'tanggalDitetapkan' => $this->input->post('tanggalDitetapkan', TRUE),
-            'statusKepegawaian' => $this->input->post('statusKepegawaian', TRUE),
-            
+            'statusKepegawaian' => $this->input->post('statusKepegawaian', TRUE),    
         ];
         $this->db->where($this->pk, $Value);
         $this->db->update($this->namaTable, $object);

@@ -21,8 +21,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             <th>No</th>
                             <th>Nama Pegawai</th>
                             <th>NIK</th>
-
-                            <th>Naik Pangkat Menjadi</th>
+                            <th>Berubah Status Menjadi</th>
                             <th>Pada Tanggal</th>
                             <th class="text-center">Aksi</th>
                         </tr>
@@ -32,17 +31,15 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-
                                 <td><?= $row->namaPegawai ?></td>
                                 <td><?= $row->nik ?></td>
-
-                                <td><?= $row->namaPangkat . '/' . $row->namaGolongan ?> </td>
+                                <td><?= fd_kepegawaian($row->statusKepegawaian) ?> </td>
                                 <td><?= tgl_indo($row->tanggalDitetapkan) ?></td>
                                 <td class="text-center">
                                     <div class="btn-group mb-0">
-                                        <a href="<?= base_url($linkin . '/sk/' . $row->idNaikPangkat) ?>" class="btn btn-info btn-sm" target="_blank" data-toggle="tooltip" title="Cetak SK"><i class="uil uil-postcard"></i></a>
-                                        <a href="<?= base_url($linkin . '/edit/' . $row->idNaikPangkat) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
-                                        <a href="<?= base_url($linkin . '/delete/' . $row->idNaikPangkat) ?>" id="<?= $row->namaPegawai ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
+                                        <a href="<?= base_url($linkin . '/sk/' . $row->idNaikPegawai) ?>" class="btn btn-info btn-sm" target="_blank" data-toggle="tooltip" title="Cetak SK"><i class="uil uil-postcard"></i></a>
+                                        <a href="<?= base_url($linkin . '/edit/' . $row->idNaikPegawai) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
+                                        <a href="<?= base_url($linkin . '/delete/' . $row->idNaikPegawai) ?>" id="<?= $row->namaPegawai ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
                                     </div>
                                 </td>
                             </tr>

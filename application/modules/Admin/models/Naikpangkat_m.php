@@ -44,7 +44,6 @@ class Naikpangkat_m extends CI_Model
             'ns' => noOtomatis('ns', 'ns', 'naikpangkat'),
             'br' => getRomawi(date('n')),
             'ts' => date('Y'),
-
         ];
         $this->db->insert($this->namaTable, $object);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan</div>');
