@@ -21,7 +21,6 @@ class Naikpangkat_m extends CI_Model
     function getDataById($Value)
     {
         $this->db->select('naikpangkat.*, pegawai.*,pangkat.namaPangkat, golongan.namaGolongan, devisi.namaDevisi, p.namaPangkat as namaPangkatDitetapkan, g.namaGolongan as namaGolonganDitetapkan');
-
         $this->db->where($this->pk, $Value);
         $this->db->join('pegawai', 'pegawai.nik = naikpangkat.nik', 'left');
         $this->db->join('pangkat', 'pangkat.idPangkat = pegawai.idPangkat', 'left');
