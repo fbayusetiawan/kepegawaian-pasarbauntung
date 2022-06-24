@@ -104,24 +104,24 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <span> Kenaikan Pangkat </span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="<?= base_url('Admin/Naikpegawai') ?>">
                             <i data-feather="pocket"></i>
                             <span> Status Pegawai </span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="<?= base_url('Admin/Prestasi') ?>">
                             <i data-feather="award"></i>
                             <span> Prestasi </span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="<?= base_url('Admin/Teguran') ?>">
                             <i data-feather="meh"></i>
                             <span> Teguran </span>
                         </a>
-                    </li>
+                    </li> -->
                     <!-- <li>
                         <a href="<?= base_url('Admin/Mutasi') ?>">
                             <i data-feather="rotate-cw"></i>
@@ -160,9 +160,9 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <li>
                                 <a href="#m_gaji" data-toggle="modal">Rekap Gaji</a>
                             </li> -->
-                            <li>
+                            <!-- <li>
                                 <a href="#m_teguran" data-toggle="modal">Teguran</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <li class="menu-title">Master Data</li>

@@ -20,15 +20,17 @@ class Naikpegawai_m extends CI_Model
 
     function getDataById($Value)
     {
-        $this->db->select('naikpangkat.*, pegawai.*,pangkat.namaPangkat, golongan.namaGolongan, devisi.namaDevisi, p.namaPangkat as namaPangkatDitetapkan, g.namaGolongan as namaGolonganDitetapkan');
+        $this->db->select('naikpegawai.*, pegawai.statusKepegawaian, p.statusKepegawaian as statusKepegawaianDitetapkan');
 
         $this->db->where($this->pk, $Value);
-        $this->db->join('pegawai', 'pegawai.nik = naikpangkat.nik', 'left');
-        $this->db->join('pangkat', 'pangkat.idPangkat = pegawai.idPangkat', 'left');
-        $this->db->join('golongan', 'golongan.idGolongan = pegawai.idGolongan', 'left');
-        $this->db->join('pangkat as p', 'p.idPangkat = naikpangkat.pangkatDitetapkan', 'left');
-        $this->db->join('golongan as g', 'g.idGolongan = naikpangkat.golonganDitetapkan', 'left');
-        $this->db->join('devisi', 'devisi.idDevisi = pegawai.idDevisi', 'left');
+        $this->db->join('pegawai', 'pegawai.nik = naikpegawai.nik', 'left');
+        // $this->db->join('pangkat', 'pangkat.idPangkat = pegawai.idPangkat', 'left');
+        // $this->db->join('golongan', 'golongan.idGolongan = pegawai.idGolongan', 'left');
+        $this->db->join('pegawai as p', 'p.statusKepegawaian = naikpegawai.statusKepegawaianDitetapkan', 'left');
+        
+        // $this->db->join('pangkat as p', 'p.idPangkat = naikpangkat.pangkatDitetapkan', 'left');
+        // $this->db->join('golongan as g', 'g.idGolongan = naikpangkat.golonganDitetapkan', 'left');
+        // $this->db->join('devisi', 'devisi.idDevisi = pegawai.idDevisi', 'left');
         return $this->db->get($this->namaTable)->row();
     }
 
