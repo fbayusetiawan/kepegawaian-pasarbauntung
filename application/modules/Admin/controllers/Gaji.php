@@ -111,8 +111,6 @@ class Gaji extends CI_Controller
         redirect('admin/' . $this->vn . '/detail/' . $idGaji);
     }
 
-
-
     // sisi pegawai
     public function pegawai()
     {

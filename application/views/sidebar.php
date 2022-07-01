@@ -26,27 +26,9 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                 <span data-feather="chevron-down"></span>
             </a>
             <div class="dropdown-menu profile-dropdown">
-                <a href="pages-profile.html" class="dropdown-item notify-item">
-                    <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
-                    <span>My Account</span>
-                </a>
+                
 
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i data-feather="settings" class="icon-dual icon-xs mr-2"></i>
-                    <span>Settings</span>
-                </a>
-
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i data-feather="help-circle" class="icon-dual icon-xs mr-2"></i>
-                    <span>Support</span>
-                </a>
-
-                <a href="pages-lock-screen.html" class="dropdown-item notify-item">
-                    <i data-feather="lock" class="icon-dual icon-xs mr-2"></i>
-                    <span>Lock Screen</span>
-                </a>
-
-                <div class="dropdown-divider"></div>
+                
 
                 <a href="<?= base_url('Auth/Logout') ?>" class="dropdown-item notify-item">
                     <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
@@ -60,14 +42,6 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
         <div id="sidebar-menu" class="slimscroll-menu">
             <ul class="metismenu" id="menu-bar">
                 <li class="menu-title">Navigation</li>
-
-
-                <!-- <li>
-                    <a href="<?= base_url('Admin/Ambanggangguan') ?>">
-                        <i data-feather="home"></i>
-                        <span> Ambang Gangguan </span>
-                    </a>
-                </li> -->
                 <?php if ($this->session->userdata('roleId') == '1') : ?>
                     <li>
                         <a href="<?= base_url('Admin/Dashboard') ?>">
@@ -98,24 +72,24 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="<?= base_url('Admin/Naikpangkat') ?>">
                             <i data-feather="pocket"></i>
                             <span> Kenaikan Pangkat </span>
                         </a>
                     </li>
-                    <!-- <li>
+                    <li>
                         <a href="<?= base_url('Admin/Naikpegawai') ?>">
                             <i data-feather="pocket"></i>
                             <span> Status Pegawai </span>
                         </a>
-                    </li> -->
+                    </li>
                     <li>
                         <a href="<?= base_url('Admin/Prestasi') ?>">
                             <i data-feather="award"></i>
                             <span> Prestasi </span>
                         </a>
-                    </li>
+                    </li> -->
                     <!-- <li>
                         <a href="<?= base_url('Admin/Teguran') ?>">
                             <i data-feather="meh"></i>
@@ -148,12 +122,12 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <li>
                                 <a href="#m_cuti" data-toggle="modal">Cuti</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#m_kenaikan" data-toggle="modal">Kenaikan Pangkat</a>
                             </li>
                             <li>
                                 <a href="#m_prestasi" data-toggle="modal">Prestasi</a>
-                            </li>
+                            </li> -->
                             <!-- <li>
                                 <a href="#m_mutasi" data-toggle="modal">Mutasi</a>
                             </li>

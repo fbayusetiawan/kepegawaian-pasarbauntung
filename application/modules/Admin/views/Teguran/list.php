@@ -19,10 +19,9 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Pegawai</th>
-                            <th>NIK</th>
-                            <th>Devisi</th>
-                            <th>Pada Tanggal</th>
+                            <th>Blok Pasar</th>
+                            <th>Tanggal Teguran</th>
+                            <th>Kesalahan</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -31,16 +30,14 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-
-                                <td><?= $row->namaPegawai ?></td>
-                                <td><?= $row->nik ?></td>
-                                <td><?= $row->namaDevisi ?></td>
+                                <td><?= $row->blok ?></td>
                                 <td><?= tgl_indo($row->tanggalTeguran) ?></td>
+                                <td><?= $row->kesalahan ?></td>
                                 <td class="text-center">
                                     <div class="btn-group mb-0">
                                         <a href="<?= base_url($linkin . '/sk/' . $row->idTeguran) ?>" class="btn btn-info btn-sm" target="_blank" data-toggle="tooltip" title="Cetak SK"><i class="uil uil-postcard"></i></a>
                                         <a href="<?= base_url($linkin . '/edit/' . $row->idTeguran) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
-                                        <a href="<?= base_url($linkin . '/delete/' . $row->idTeguran) ?>" id="<?= $row->namaPegawai ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
+                                        <a href="<?= base_url($linkin . '/delete/' . $row->idTeguran) ?>" id="<?= $row->blok ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
                                     </div>
                                 </td>
                             </tr>

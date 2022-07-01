@@ -38,10 +38,7 @@ $no = '1';
                         <th>Jenis Kelamin</th>
                         <th>: <?= fd_jk($row->jk) ?></th>
                     </tr>
-                    <tr>
-                        <th>Status Pegawai</th>
-                        <th>: <?= fd_kepegawaian($row->statusKepegawaian) ?></th>
-                    </tr>
+
                     <tr>
                         <th>Departemen</th>
                         <th>: <?= $row->namaDepartemen ?></th>
@@ -67,27 +64,18 @@ $no = '1';
                         <th>: <?= $row->alamat ?></th>
                     </tr>
                     <tr>
-                        <th>Nomer WhatsApp</th>
-                        <th>: <?= $row->noWa ?></th>
+                        <th>Status Pegawai</th>
+                        <th>: <?= fd_kepegawaian($row->statusKepegawaian) ?></th>
                     </tr>
-                    <!-- <tr>
-                        <th>Masa Bekerja</th>
-                        <th>:
-                            <?php if (empty($row->tanggalSelesai)) : ?>
-                                <?= tgl_indo($row->tanggalMulaiBekerja) ?>
-                            <?php else : ?>
-                                <?= tgl_indo($row->tanggalMulaiBekerja) ?> sampai <?= tgl_indo($row->tanggalSelesai) ?>
-                            <?php endif; ?> </th>
-                    </tr> -->
                     <tr>
                         <th>Masa Bekerja</th>
                         <th>:
-                            <?php if ($row->statusKepegawaian == 1 || $row->statusKepegawaian == 2)  { 
+                            <?php if ($row->statusKepegawaian == 1) {
                                 echo tgl_indo($row->tanggalMulaiBekerja);
                             } else {
                                 echo tgl_indo($row->tanggalMulaiBekerja) . ' sampai ' . tgl_indo($row->tanggalSelesai);
                             } ?>
-                            
+
                     </tr>
                 </table>
 

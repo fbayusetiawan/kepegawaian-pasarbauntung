@@ -13,7 +13,7 @@ class Gaji_m extends CI_Model
         return $this->db->get($this->namaTable)->result();
     }
 
-    function getDatagajiDetail($Value)
+    function getDataGajiDetail($Value)
     {
         $this->db->where('pegawai.isActive', '1');
         $this->db->where('idGaji', $Value);

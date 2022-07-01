@@ -40,7 +40,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                                         <?php else : ?>
                                             <a href="<?= base_url($linkin . '/editGajiDetail/' . $row->idGaji . '/' . $data->idGajiDetail) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
                                             <a href="<?= base_url($linkin . '/deleteGajiDetail/' . $row->idGaji . '/' . $data->idGajiDetail) ?>" id="<?= $data->namaPegawai ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
-                                            <!-- <a href="<?= base_url($linkin . '/tunjungan/' . $data->idGajiDetail) ?>" class="btn btn-success btn-sm" data-toggle="tooltip" title="Tambah Tunjangan"><i class="uil uil-plus"></i></a> -->
+                                            <a href="<?= base_url($linkin . '/tunjungan/' . $data->idGajiDetail) ?>" class="btn btn-success btn-sm" data-toggle="tooltip" title="Tambah Tunjangan"><i class="uil uil-plus"></i></a>
                                         <?php endif; ?>
                                     </div>
                                 </td>

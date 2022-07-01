@@ -18,42 +18,14 @@ $ctrl = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                 <form class="needs-validation" novalidate="" action="<?= base_url($ctrl . '/addAction') ?>" method="post" enctype="multipart/form-data">
 
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">NIK</label>
-                        <input type="text" name="nik" id="nikid" onkeyup="getpegawai()" class="form-control" required>
+                        <label for="validationCustom01">Blok Pasar</label>
+                        <input type="text" name="blok" id="validationCustom01" class="form-control" required>
                         <div class="invalid-feedback">
                             Harus di isi.
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Nama Pegawai</label>
-                        <input type="text" name="namaPegawai" readonly id="namapegawai" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Harus di isi.
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Tempat, Tangga Lahir</label>
-                        <input type="text" name="ttl" id="ttl" readonly class="form-control" required>
-                        <div class="invalid-feedback">
-                            Harus di isi.
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Pangkat/Golongan</label>
-                        <input type="text" name="pangkatgoongan" id="pg" readonly class="form-control" required>
-                        <div class="invalid-feedback">
-                            Harus di isi.
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Devisi saat ini</label>
-                        <input type="text" name="devisi" id="devisi" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Harus di isi.
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Tanggal</label>
+                        <label for="validationCustom01">Tanggal Teguran</label>
                         <input type="date" name="tanggalTeguran" id="validationCustom01" class="form-control" required>
                         <div class="invalid-feedback">
                             Harus di isi.
@@ -69,6 +41,20 @@ $ctrl = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Hukuman</label>
                         <input type="text" name="hukuman" id="validationCustom01" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Harus di isi.
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Biaya Hukuman</label>
+                        <input type="text" name="biaya" id="validationCustom01" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Harus di isi.
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Biaya Terbilang</label>
+                        <input type="text" name="terbilang" id="validationCustom01" class="form-control" required>
                         <div class="invalid-feedback">
                             Harus di isi.
                         </div>

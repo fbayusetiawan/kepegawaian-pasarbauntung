@@ -45,6 +45,7 @@ class Cuti_m extends CI_Model
         $this->db->join('devisi', 'devisi.idDevisi = pegawai.idDevisi', 'left');
         $this->db->join('golongan', 'golongan.idGolongan = pegawai.idGolongan', 'left');
         $this->db->join('pangkat', 'pangkat.idPangkat = pegawai.idPangkat', 'left');
+        
         return $this->db->get($this->namaTable)->row();
     }
 

@@ -20,30 +20,19 @@ $user = $this->db->get('user')->row();
                                 <span class="text-muted font-size-13">Total Pegawai PNS</span>
                             </div>
                         </div>
-                    </div>
+                    </div>  
                     <div class="col-xl-3 col-sm-6">
                         <!-- stat 1 -->
                         <div class="media p-3">
                             <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
                             <div class="media-body">
                                 <h4 class="mt-0 mb-0"><?= $pegawai2  ?></h4>
-                                <span class="text-muted font-size-13">Total Pegawai Tetap</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6">
-                        <!-- stat 1 -->
-                        <div class="media p-3">
-                            <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
-                            <div class="media-body">
-                                <h4 class="mt-0 mb-0"><?= $pegawai3  ?></h4>
                                 <span class="text-muted font-size-13">Total Tenaga Honorer </span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-xl-3 col-sm-6">
-                        <!-- stat 3 -->
+                    <!-- <div class="col-xl-3 col-sm-6">
                         <div class="media p-3">
                             <i data-feather="grid" class="align-self-center icon-dual icon-lg mr-4"></i>
                             <div class="media-body">
@@ -51,10 +40,9 @@ $user = $this->db->get('user')->row();
                                 <span class="text-muted">Total Pegawai Berprestasi</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="col-xl-3 col-sm-6">
-                        <!-- stat 3 -->
+                    <!-- <div class="col-xl-3 col-sm-6">
                         <div class="media p-3">
                             <i data-feather="check-square" class="align-self-center icon-dual icon-lg mr-4"></i>
                             <div class="media-body">
@@ -62,7 +50,7 @@ $user = $this->db->get('user')->row();
                                 <span class="text-muted">Total Pegawai Naik Pangkat</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="inbox-rightbar p-4">
                     <div class="mt-2">

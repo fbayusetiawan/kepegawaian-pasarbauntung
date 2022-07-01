@@ -44,28 +44,10 @@ $now = date('Y-m-d');
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
-                Kepala UPT Pasar Bauntung Banjarbaru memandang perlu mengeluarkan surat teguran kepada:
-                <table cellspacing="0" width="100%">
-
-                    <tr>
-                        <td>Nama</td>
-                        <td>:</td>
-                        <td><?= $row->namaPegawai ?></td>
-                    </tr>
-                    <tr>
-                        <td>Nomer Induk Pegawai</td>
-                        <td>:</td>
-                        <td><?= $row->noIndukKepegawaian ?></td>
-                    </tr>
-                    <tr>
-                        <td>Devisi</td>
-                        <td>:</td>
-                        <td><?= $row->namaDevisi ?></td>
-                    </tr>
-                </table>
+                Berdasarkan Peraturan Daerah Kota Banjarbaru Nomor 5 Tahun 2021 Tentang Perubahan Atas Peraturan Daerah Nomor 10 Tahun 2011 tentang Retribusi Pelayanan Pasar dan Retribusi Pasar dan Pertokoan, memperhatikan Laporan pada Tanggal <?= tgl_indo($row->tanggalTeguran) ?> dan menunjuk Surat Pernyataan Bapak/Ibu/Sdr(i), maka dengan ini dapat kami sampaikan bahwa : 
                 <br>
                 <br>
-                Atas Pelanggaran Berupa <b><?= $row->kesalahan ?></b> <br>
+                Pasar <b>Blok <?= $row->blok ?></b> <br>
                 Sesuai dengan peraturan pemerintah no.53 tahun 2010 tentang Disiplin Pegawai dimana, Pegawai yang melanggar peraturan disiplin akan diberikan <b><?= $row->hukuman ?></b>. <br>
                 Dengan diterbikannya Surat Teguran ini diharapkan yang bersangkutan akan lebih bertanggung jawab, mengerti dan menyadari apa yang telah dilakukannya. <br>
                 Surat teguran ini berlaku untuk selama-lamanya 3 (tiga) bulan, terhitung sejak tanggal dikeluarkannya surat peringatan ini dan apabila yang bersangkutan melakukan kesalahan yang sama atau lebih berat sebelum masa berlaku surat peringatan ini habis dapat dikenakan sanksi yang lebih berat.
