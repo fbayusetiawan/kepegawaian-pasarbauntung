@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2022 at 04:50 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.3.33
+-- Generation Time: Jul 01, 2022 at 04:36 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kepegawaian`
+-- Database: `pasarbauntung`
 --
 
 -- --------------------------------------------------------
@@ -40,8 +40,7 @@ CREATE TABLE `absen` (
 --
 
 INSERT INTO `absen` (`idAbsen`, `bulan`, `tahun`, `jumlahHariKerja`, `tanggalInputAbsen`) VALUES
-('6209b1a2e018a', 'Januari', 2022, 24, '2022-02-14'),
-('6209c47c7af88', 'Februari', 2022, 25, '2022-02-14');
+('62b5e1d217e2a', 'Juni', 2022, 22, '2022-06-24');
 
 -- --------------------------------------------------------
 
@@ -65,8 +64,12 @@ CREATE TABLE `absen_detail` (
 --
 
 INSERT INTO `absen_detail` (`idAbsenDetail`, `idAbsen`, `idPegawai`, `hadir`, `izin`, `sakit`, `tanpaKeterangan`, `tanggalInput`) VALUES
-(12, '6209c47c7af88', '6209b6aa36dbe', 25, 0, 0, 0, '2022-02-14'),
-(13, '6209c47c7af88', '6209b74089e71', 25, 0, 0, 0, '2022-02-14');
+(16, '62ab1b4ba9e8a', '62ab35501f1d9', 22, 0, 0, 0, '2022-06-17'),
+(17, '62ab1b4ba9e8a', '62ab378a26745', 22, 0, 0, 0, '2022-06-17'),
+(18, '62b58befa5ef6', '62ab35501f1d9', 30, 0, 0, 0, '2022-06-24'),
+(19, '62b58befa5ef6', '62ab378a26745', 30, 0, 0, 0, '2022-06-24'),
+(20, '62b5e1d217e2a', '62b5e03e3a6e9', 22, 0, 0, 0, '2022-06-24'),
+(21, '62b5e1d217e2a', '62b5e10690225', 20, 1, 1, 0, '2022-06-24');
 
 -- --------------------------------------------------------
 
@@ -92,8 +95,8 @@ CREATE TABLE `cuti` (
 --
 
 INSERT INTO `cuti` (`idCuti`, `idPegawai`, `ns`, `br`, `ts`, `verify`, `dariTanggal`, `sampaiTanggal`, `alasanCuti`, `tanggalPengajuan`) VALUES
-('6209c46554156', '6209b6aa36dbe', '003', 'II', 2022, 4, '2022-02-12', '2022-02-14', 'Pulang Kampung', '2022-02-14'),
-('6209c921c5e15', '6209b74089e71', '004', 'II', 2022, 4, '2022-02-13', '2022-02-14', 'Pulang Kampung', '2022-02-14');
+('62b5e2f7535df', '62b5e03e3a6e9', '002', 'VI', 2022, 4, '2022-06-25', '2022-06-26', 'Pulang Kampung', '2022-06-24'),
+('62bdd4057fc9d', '62b5e03e3a6e9', '003', 'VI', 2022, 4, '2022-07-01', '2022-07-08', 'Sakit', '2022-06-30');
 
 -- --------------------------------------------------------
 
@@ -111,9 +114,11 @@ CREATE TABLE `departemen` (
 --
 
 INSERT INTO `departemen` (`idDepartemen`, `namaDepartemen`) VALUES
-(4, 'Kepegawaian'),
-(5, 'Perindustrian'),
-(6, 'Peningkatan Sarana Distribusi Perdagangan dan Pasar');
+(7, 'Keuangan'),
+(8, 'Kepegawaian'),
+(9, 'Pranata Kearsipan'),
+(10, 'Juru Pungut Retribusi'),
+(11, 'Kasubbag Tata Usaha');
 
 -- --------------------------------------------------------
 
@@ -132,11 +137,8 @@ CREATE TABLE `devisi` (
 --
 
 INSERT INTO `devisi` (`idDevisi`, `idDepartemen`, `namaDevisi`) VALUES
-(3, 5, 'Industri Logam, Mesin, Elektronika, dan Alat Transportasi'),
-(4, 5, 'Standarisasi dan Pengendalian Pencemaran Lingkungan'),
-(5, 6, 'Pembinaan'),
-(6, 6, 'Pemeliharaan dan Pengembangan'),
-(7, 4, 'Keuangan');
+(8, 11, 'Pengawas Kebersihan Pasar'),
+(9, 11, 'Pengawas Ketertiban Pasar');
 
 -- --------------------------------------------------------
 
@@ -155,7 +157,7 @@ CREATE TABLE `gaji` (
 --
 
 INSERT INTO `gaji` (`idGaji`, `bulan`, `tahun`) VALUES
-('611de1887ca2a', 'Januari', 2021);
+('62b5e4a21bf39', 'Juni', 2022);
 
 -- --------------------------------------------------------
 
@@ -169,14 +171,6 @@ CREATE TABLE `gaji_detail` (
   `idPegawai` varchar(20) NOT NULL,
   `nominalGaji` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gaji_detail`
---
-
-INSERT INTO `gaji_detail` (`idGajiDetail`, `idGaji`, `idPegawai`, `nominalGaji`) VALUES
-(2, '6117f090ac005', '23423r235qw', 2000000),
-(3, '6117f090ac005', '4283ery239hrd293', 2000000);
 
 -- --------------------------------------------------------
 
@@ -299,7 +293,30 @@ CREATE TABLE `naikpangkat` (
 --
 
 INSERT INTO `naikpangkat` (`idNaikPangkat`, `nik`, `ns`, `br`, `ts`, `tanggalDitetapkan`, `pangkatDitetapkan`, `golonganDitetapkan`) VALUES
-('6209c38c56fce', '6309020407097001', '001', 'II', 2022, '2022-02-14', 2, 13);
+('62b5e23ea98e7', '6309020407097001', '001', 'VI', 2022, '2022-06-25', 4, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `naikpegawai`
+--
+
+CREATE TABLE `naikpegawai` (
+  `idNaikPegawai` varchar(20) NOT NULL,
+  `nik` varchar(20) NOT NULL,
+  `ns` varchar(3) NOT NULL,
+  `br` varchar(6) NOT NULL,
+  `ts` int(4) NOT NULL,
+  `tanggalDitetapkan` date NOT NULL,
+  `statusKepegawaian` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `naikpegawai`
+--
+
+INSERT INTO `naikpegawai` (`idNaikPegawai`, `nik`, `ns`, `br`, `ts`, `tanggalDitetapkan`, `statusKepegawaian`) VALUES
+('62b06567b35db', '6309020407097001', '001', 'VI', 2022, '2022-06-20', 1);
 
 -- --------------------------------------------------------
 
@@ -333,6 +350,7 @@ CREATE TABLE `pegawai` (
   `nik` varchar(16) NOT NULL,
   `noIndukKepegawaian` varchar(16) NOT NULL,
   `tanggalMulaiBekerja` date NOT NULL,
+  `tanggalSelesai` date DEFAULT NULL,
   `jk` int(11) NOT NULL,
   `tanggalLahir` date NOT NULL,
   `tempatLahir` varchar(50) NOT NULL,
@@ -355,9 +373,9 @@ CREATE TABLE `pegawai` (
 -- Dumping data for table `pegawai`
 --
 
-INSERT INTO `pegawai` (`idPegawai`, `namaPegawai`, `nik`, `noIndukKepegawaian`, `tanggalMulaiBekerja`, `jk`, `tanggalLahir`, `tempatLahir`, `statusKepegawaian`, `idDevisi`, `idPangkat`, `idGolongan`, `idJabatan`, `noWa`, `alamat`, `roleId`, `isActive`, `username`, `password`, `foto`, `helpNumber`) VALUES
-('6209b6aa36dbe', 'Muhammad Syaifullah, S.Kom', '6309020407097001', '2163140222001', '2022-01-01', 1, '1997-04-07', 'Tanjung', 1, 3, 2, 11, '3', '085156362232', 'Jl. Handil Bakti Raya Pesona Indah', 3, 1, 'syaifullah123', '$2y$10$Phsp3mGdZAsHH6HAETHgguO/dxxQo3sQnp794jannsvs4/fPFMD6G', '682px-User-Pict-Profil_svg.png', '001'),
-('6209b74089e71', 'Aulia Febby, S.M', '6309020407097002', '2163140222002', '2021-11-01', 2, '1999-03-02', 'Banjarmasin', 1, 5, 2, 12, '4', '085156362232', 'Jl. Bakti Utama No 1', 3, 1, 'febby123', '$2y$10$u4C7gPYGVE.UXGIEKs1ww.cf/HtKGZaYPDNYdwwHw8uCrLwTQuqaG', '682px-User-Pict-Profil_svg1.png', '002');
+INSERT INTO `pegawai` (`idPegawai`, `namaPegawai`, `nik`, `noIndukKepegawaian`, `tanggalMulaiBekerja`, `tanggalSelesai`, `jk`, `tanggalLahir`, `tempatLahir`, `statusKepegawaian`, `idDevisi`, `idPangkat`, `idGolongan`, `idJabatan`, `noWa`, `alamat`, `roleId`, `isActive`, `username`, `password`, `foto`, `helpNumber`) VALUES
+('62b5e03e3a6e9', 'Muhammad Syaifullah, S.Kom', '6309020407097001', '2163240622001', '2022-06-25', '2023-06-25', 1, '1998-05-31', 'Banjarmasin', 2, 8, 2, 9, '2', '085156362232', 'Jl. Bakti Utama No 1', 3, 1, 'syaiful123', '$2y$10$4F224Wo3yDBNfBZU0wrYF.sXsqkTmZ/DPPzzdauBSlM/Znv14VLba', '63224e95fb803683776e251afdad97bf.jpg', '001'),
+('62b5e10690225', 'Aulia Febby, S.M', '6309020407097002', '2163240622002', '2022-06-25', '0000-00-00', 2, '1997-06-20', 'Banjarbaru', 1, 9, 2, 10, '1', '085156362232', 'Jl. Cemara Raya Komp. Tanjung', 3, 1, 'febby123', '$2y$10$69zzoT/kHcKrMSDUezsZIuwQzyDczyjQrB.4PXE2gLAvuhPbwByEi', '279860932_407170168081950_6545682480426208850_n3.jpg', '002');
 
 -- --------------------------------------------------------
 
@@ -376,7 +394,7 @@ CREATE TABLE `prestasi` (
 --
 
 INSERT INTO `prestasi` (`idPrestasi`, `bulan`, `tahun`) VALUES
-('6209b82b41549', 'Januari', 2022);
+('62b5e270dc119', 'Juni', 2022);
 
 -- --------------------------------------------------------
 
@@ -402,54 +420,9 @@ CREATE TABLE `prestasi_detail` (
 
 INSERT INTO `prestasi_detail` (`idPrestasiDetail`, `idPrestasi`, `nik`, `prestasiDiraih`, `kerajinan`, `kehadiran`, `perilaku`, `profesional`, `tanggungJawab`) VALUES
 (3, '6209b82b41549', '6309020407097001', 'Juara 1', 10, 9, 9, 9, 9),
-(4, '6209b82b41549', '6309020407097002', 'Juara Olimpiade', 9, 9, 9, 9, 9);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `shift`
---
-
-CREATE TABLE `shift` (
-  `idShift` int(11) NOT NULL,
-  `bulan` varchar(20) NOT NULL,
-  `tahun` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `shift`
---
-
-INSERT INTO `shift` (`idShift`, `bulan`, `tahun`) VALUES
-(1, 'Agustus', 2021);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `shift_detail`
---
-
-CREATE TABLE `shift_detail` (
-  `idShiftDetail` int(11) NOT NULL,
-  `idShift` int(11) NOT NULL,
-  `hari` varchar(15) NOT NULL,
-  `idPegawai` varchar(20) NOT NULL,
-  `shift` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `shift_detail`
---
-
-INSERT INTO `shift_detail` (`idShiftDetail`, `idShift`, `hari`, `idPegawai`, `shift`) VALUES
-(1, 1, 'Senin', '4283ery239hrd293', '2'),
-(3, 1, 'Selasa', '4283ery239hrd293', '1'),
-(4, 1, 'Senin', '23423r235qw', '1'),
-(5, 1, 'Rabu', '4283ery239hrd293', '1'),
-(6, 1, 'Kamis', '4283ery239hrd293', '2'),
-(7, 1, 'Jumat', '4283ery239hrd293', '1'),
-(8, 1, 'Sabtu', '4283ery239hrd293', '1'),
-(9, 1, 'Minggu', '4283ery239hrd293', '3');
+(4, '6209b82b41549', '6309020407097002', 'Juara Olimpiade', 9, 9, 9, 9, 9),
+(5, '62ab222d9cf5a', '6309020407097001', 'Mengembangan Pasar Modern', 9, 9, 9, 9, 9),
+(6, '62b5e270dc119', '6309020407097001', 'Mengembangkan Pasar Modern', 9, 9, 9, 9, 10);
 
 -- --------------------------------------------------------
 
@@ -459,21 +432,23 @@ INSERT INTO `shift_detail` (`idShiftDetail`, `idShift`, `hari`, `idPegawai`, `sh
 
 CREATE TABLE `teguran` (
   `idTeguran` varchar(20) NOT NULL,
-  `nik` varchar(20) NOT NULL,
   `ns` varchar(3) NOT NULL,
   `br` varchar(6) NOT NULL,
   `ts` int(4) NOT NULL,
+  `blok` varchar(128) NOT NULL,
   `tanggalTeguran` date NOT NULL,
   `kesalahan` text NOT NULL,
-  `hukuman` text NOT NULL
+  `hukuman` text NOT NULL,
+  `biaya` varchar(128) NOT NULL,
+  `terbilang` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `teguran`
 --
 
-INSERT INTO `teguran` (`idTeguran`, `nik`, `ns`, `br`, `ts`, `tanggalTeguran`, `kesalahan`, `hukuman`) VALUES
-('6209b89da20b7', '6309020407097001', '001', 'II', 2022, '2022-02-14', 'Terlambar bekerja', 'Potong Gaji 2 bulan');
+INSERT INTO `teguran` (`idTeguran`, `ns`, `br`, `ts`, `blok`, `tanggalTeguran`, `kesalahan`, `hukuman`, `biaya`, `terbilang`) VALUES
+('62bd81b51d394', '001', 'VI', 2022, 'Blok A', '2022-06-30', 'Melunasi Tunggakan', 'Segera melakukan pembayaran retribusi', '50000000', 'Lima Puluh Juta Rupiah');
 
 -- --------------------------------------------------------
 
@@ -499,7 +474,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`idUsers`, `username`, `password`, `roleId`, `namaLengkap`, `email`, `noWa`, `isActive`, `foto`, `dateCreated`) VALUES
-('5f269419c1055', 'admin', '$2y$10$Aq98yNqVy4ftKUyoY0mqjOkdB1lqvjzENoxeDb4pxumiozvNcQa1W', 1, 'Muhammad Dzaky', 'mdzaky@gmail.com', '081223231212', 1, '', 0);
+('5f269419c1055', 'admin', '$2y$10$xNJGSXyRhe6A/fhm3qw8LeDQtO.wn/H59XXpZ3ad81xfxuvBw6UTG', 1, 'Raden M. Naufal', 'radenmnaufalrms@gmail.com', '081223231212', 1, '', 0),
+('62acb3e03bbbe', 'ahim123', '$2y$10$Ey2JU6q6wI1KDBVK7BTPMegL6ejKpX0E/PoNjYy.nuNU2zAAIh3ym', 2, 'Abdur Rohim', 'ahimahim123@gmail.com', '0851-5636-2232', 1, '', 1655485408);
 
 --
 -- Indexes for dumped tables
@@ -578,6 +554,12 @@ ALTER TABLE `naikpangkat`
   ADD PRIMARY KEY (`idNaikPangkat`);
 
 --
+-- Indexes for table `naikpegawai`
+--
+ALTER TABLE `naikpegawai`
+  ADD PRIMARY KEY (`idNaikPegawai`);
+
+--
 -- Indexes for table `pangkat`
 --
 ALTER TABLE `pangkat`
@@ -602,18 +584,6 @@ ALTER TABLE `prestasi_detail`
   ADD PRIMARY KEY (`idPrestasiDetail`);
 
 --
--- Indexes for table `shift`
---
-ALTER TABLE `shift`
-  ADD PRIMARY KEY (`idShift`);
-
---
--- Indexes for table `shift_detail`
---
-ALTER TABLE `shift_detail`
-  ADD PRIMARY KEY (`idShiftDetail`);
-
---
 -- Indexes for table `teguran`
 --
 ALTER TABLE `teguran`
@@ -633,19 +603,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `absen_detail`
 --
 ALTER TABLE `absen_detail`
-  MODIFY `idAbsenDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idAbsenDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `departemen`
 --
 ALTER TABLE `departemen`
-  MODIFY `idDepartemen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idDepartemen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `devisi`
 --
 ALTER TABLE `devisi`
-  MODIFY `idDevisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idDevisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `gaji_detail`
@@ -681,19 +651,7 @@ ALTER TABLE `pangkat`
 -- AUTO_INCREMENT for table `prestasi_detail`
 --
 ALTER TABLE `prestasi_detail`
-  MODIFY `idPrestasiDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `shift`
---
-ALTER TABLE `shift`
-  MODIFY `idShift` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `shift_detail`
---
-ALTER TABLE `shift_detail`
-  MODIFY `idShiftDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idPrestasiDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
