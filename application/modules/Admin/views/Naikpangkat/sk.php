@@ -49,7 +49,7 @@ $now = date('Y-m-d');
         <div class="col-sm">
             <div class="card-box table-responsive">
                 <br>
-                
+
                 <table cellspacing="0" width="100%">
                     <tr>
                         <td valign="top">Menimbang:</td>
@@ -96,7 +96,7 @@ $now = date('Y-m-d');
                     </tr>
                 </table><br>
                 <p class="text-center">MEMUTUSKAN:</p>
-                
+
                 <table cellspacing="0" width="100%">
                     <tr>
                         <td>Menetapkan</td>

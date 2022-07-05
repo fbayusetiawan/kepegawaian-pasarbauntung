@@ -35,7 +35,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             $this->db->where('idAbsen', $row->idAbsen);
                             $hasil = $this->db->get('absen_detail')->row();
                             if (empty($hasil->idAbsenDetail)) :
-                                $h = '';
+                                $h = $row->jumlahHariKerja;
                                 $i = '';
                                 $s = '';
                                 $tk = '';
@@ -48,7 +48,6 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-
                                 <td><?= $data->namaPegawai ?></td>
                                 <td><?= $data->nik ?></td>
                                 <td><input type="text" class="form-control angka" value="<?= $h ?>" id="hadir<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>

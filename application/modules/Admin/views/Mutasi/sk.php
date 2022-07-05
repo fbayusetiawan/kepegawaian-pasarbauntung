@@ -24,10 +24,10 @@ $now = date('Y-m-d');
 <body>
     <p align="center">
         <b>
-            <img src="<?= base_url() ?>/assets/images/logo.png" align="left" width="65">
-            <font size="4">RUMAH SAKIT UMUM DAERAH</font> <br>
-            <font size="5">SULTAN SURIANSYAH</font> <br>
-            Jl. Rantauan Darat, Kelayan Sel., Kec. Banjarmasin Sel., Kota Banjarmasin, Kalimantan Selatan 70234
+            <img src="<?= base_url() ?>/assets/images/logobjb.png" align="left" width="65">
+            <font size="4">PEMERINTAH KOTA BANJABARU</font> <br>
+            <font size="5">UPT PASAR BAUNTUNG</font> <br>
+            Jl. Panglima Batur Barat No.08, Loktabat Utara, Kec. Banjarbaru Utara, Kota Banjar Baru, Kalimantan Selatan 70714
         </b><br>
     </p>
     <hr size="1px" color="black">
@@ -37,11 +37,9 @@ $now = date('Y-m-d');
             <U>
                 <FONT size="4">SURAT KEPUTUSAN</FONT>
             </U> <br>
-            <FONT size="3">NOMOR <?= $row->ns ?>/MP/<?= $row->br ?>/<?= $row->ts ?></FONT> <br><br><br>
+            <FONT size="3">NOMOR <?= $row->ns ?>/UPTBAUNTUNG/<?= $row->br ?>/<?= $row->ts ?></FONT> <br><br><br>
             TENTANG <br><br><br>
-            MUTASI PEGAWAI RUMAH SAKIT UMUM DAERAH SULTAN SURIANSYAH <br>
-
-            DIREKTUR RUMAH SAKIT UMUM DAERAH SULTAN SURIANSYAH
+            MUTASI PEGAWAI UPT PASAR BAUNTUNG BANJARBARU <br>
         </b>
     </p>
     <br>
@@ -49,17 +47,16 @@ $now = date('Y-m-d');
         <div class="col-sm-12">
             <div class="card-box table-responsive">
                 <br>
-                <br><br><br>
                 <table cellspacing="0" width="100%">
                     <tr>
                         <td valign="top">Menimbang:</td>
                         <td valign="top">a.</td>
-                        <td>Bahwa agar dalam pelaksanaan mutasi pegawai di RSUD Sultan Suriansyah dapat terlaksana dengan baik, maka perlu adanya kebijakan mutasi pegawai di RSUD Sultan Suriansyah;</td>
+                        <td>Bahwa agar dalam pelaksanaan mutasi pegawai di UPT Pasar Bauntung Banjarbaru dapat terlaksana dengan baik, maka perlu adanya kebijakan mutasi pegawai di UPT Pasar Bauntung Banjarbaru;</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td valign="top">b.</td>
-                        <td>Bahwa Berdasarkan pertimbangan sebagaimana dimaksud dalam butir a perlu adanya kebijakan mutasi pegawai di RSUD Sultan Suriansyah dengan surat keputusan RSUD Sultan Suriansyah.</td>
+                        <td>Bahwa Berdasarkan pertimbangan sebagaimana dimaksud dalam butir a perlu adanya kebijakan mutasi pegawai di UPT Pasar Bauntung Banjarbaru dengan surat keputusan UPT Pasar Bauntung Banjarbaru.</td>
                     </tr>
 
                 </table> <br>
@@ -77,22 +74,17 @@ $now = date('Y-m-d');
                     <tr>
                         <td></td>
                         <td valign="top">3.</td>
-                        <td>Undang-undang Republik Indonesia Nomor 13 tahun 2003 tentang Ketenagakerjaan;</td>
+                        <td>Undang-undang Republik Indonesia Nomor 13 tahun 2003 tentang Organisasi Perangkat Daerah;</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td valign="top">4.</td>
-                        <td>Undang-undang Republik Indonesia Nomor 44 tahun 2009 tentang Rumah Sakit;</td>
+                        <td>Undang-undang Republik Indonesia Nomor 44 tahun 2009 tentang Pengelola Pasar;</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td valign="top">5.</td>
-                        <td>Peraturan Pemerintah Republik Indonesia Nomor 32 Tahun 1996 tentang Tenaga Kesehatan;</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td valign="top">6.</td>
-                        <td>Peraturan Menteri Kesehatan Republik Indonesia Nomor 1045 / Menkes / Per / XI / 2006 tentang Pedoman Organisasi Rumah Sakit di Lingkungan Departemen Kesehatan;</td>
+                        <td>Peraturan Daerah Provinsi Kalimantan Selatan Nomor 9 Tahun 2008 tentang Organisasi dan Tata Kerja Dinas Daerah Provinsi Kalimantan Selatan;</td>
                     </tr>
                 </table><br><br>
                 <p class="text-center">MEMUTUSKAN:</p>
@@ -106,7 +98,7 @@ $now = date('Y-m-d');
                     <tr>
                         <td valign="top">KESATU</td>
                         <td valign="top">:</td>
-                        <td colspan="3">Pegawai Rumah Sakit Umum Daerah Sultan Suriasnyah tersebut dibawah ini:</td>
+                        <td colspan="3">Pegawai UPT Pasar Bauntung Banjarbaru tersebut dibawah ini:</td>
                     </tr>
                     <tr>
                         <td valign="top"></td>
@@ -180,17 +172,17 @@ $now = date('Y-m-d');
         <tr>
             <td width="40%"></td>
             <td width="20%"></td>
-            <td align="center">Banjarmasin, <?= tgl_indo($now) ?></td>
+            <td align="center">Banjarbaru, <?= tgl_indo($now) ?></td>
         </tr>
         <tr>
             <td align="center"><br><br><br></td>
             <td></td>
-            <td align="center">Direktur <br><br><br></td>
+            <td align="center">Kepala UPT<br><br><br></td>
         </tr>
         <tr>
             <td align="center"></td>
             <td></td>
-            <td align="center">dr. Sukotjo Hartono <br> NIP. 198011252000121003</td>
+            <td align="center">Adi Royan Pratama, ST <br> NIP. 198011252000121003</td>
         </tr>
     </table>
 </body>

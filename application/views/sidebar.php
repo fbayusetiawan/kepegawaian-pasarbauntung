@@ -72,19 +72,19 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             </li>
                         </ul>
                     </li>
-                    <!-- <li>
+                    <li>
                         <a href="<?= base_url('Admin/Naikpangkat') ?>">
                             <i data-feather="pocket"></i>
                             <span> Kenaikan Pangkat </span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="<?= base_url('Admin/Naikpegawai') ?>">
                             <i data-feather="pocket"></i>
                             <span> Status Pegawai </span>
                         </a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="<?= base_url('Admin/Prestasi') ?>">
                             <i data-feather="award"></i>
                             <span> Prestasi </span>
@@ -96,12 +96,12 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <span> Teguran </span>
                         </a>
                     </li> -->
-                    <!-- <li>
+                    <li>
                         <a href="<?= base_url('Admin/Mutasi') ?>">
                             <i data-feather="rotate-cw"></i>
                             <span> Mutasi </span>
                         </a>
-                    </li> -->
+                    </li>
                     <!-- <li>
                         <a href="<?= base_url('Admin/Shift') ?>">
                             <i data-feather="slack"></i>
@@ -122,16 +122,16 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <li>
                                 <a href="#m_cuti" data-toggle="modal">Cuti</a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="#m_kenaikan" data-toggle="modal">Kenaikan Pangkat</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#m_prestasi" data-toggle="modal">Prestasi</a>
                             </li> -->
-                            <!-- <li>
+                            <li>
                                 <a href="#m_mutasi" data-toggle="modal">Mutasi</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#m_gaji" data-toggle="modal">Rekap Gaji</a>
                             </li> -->
                             <!-- <li>
