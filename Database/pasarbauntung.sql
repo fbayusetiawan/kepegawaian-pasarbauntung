@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2022 at 04:36 AM
+-- Generation Time: Jul 06, 2022 at 03:09 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -40,7 +40,8 @@ CREATE TABLE `absen` (
 --
 
 INSERT INTO `absen` (`idAbsen`, `bulan`, `tahun`, `jumlahHariKerja`, `tanggalInputAbsen`) VALUES
-('62b5e1d217e2a', 'Juni', 2022, 22, '2022-06-24');
+('62b5e1d217e2a', 'Juni', 2022, 22, '2022-06-24'),
+('62bfe627dd9de', 'Juli', 2022, 25, '2022-07-02');
 
 -- --------------------------------------------------------
 
@@ -64,12 +65,8 @@ CREATE TABLE `absen_detail` (
 --
 
 INSERT INTO `absen_detail` (`idAbsenDetail`, `idAbsen`, `idPegawai`, `hadir`, `izin`, `sakit`, `tanpaKeterangan`, `tanggalInput`) VALUES
-(16, '62ab1b4ba9e8a', '62ab35501f1d9', 22, 0, 0, 0, '2022-06-17'),
-(17, '62ab1b4ba9e8a', '62ab378a26745', 22, 0, 0, 0, '2022-06-17'),
-(18, '62b58befa5ef6', '62ab35501f1d9', 30, 0, 0, 0, '2022-06-24'),
-(19, '62b58befa5ef6', '62ab378a26745', 30, 0, 0, 0, '2022-06-24'),
-(20, '62b5e1d217e2a', '62b5e03e3a6e9', 22, 0, 0, 0, '2022-06-24'),
-(21, '62b5e1d217e2a', '62b5e10690225', 20, 1, 1, 0, '2022-06-24');
+(22, '62b5e1d217e2a', '62b5e03e3a6e9', 22, 0, 0, 0, '2022-07-02'),
+(23, '62b5e1d217e2a', '62b5e10690225', 22, 0, 0, 0, '2022-07-02');
 
 -- --------------------------------------------------------
 
@@ -269,7 +266,7 @@ CREATE TABLE `mutasi` (
 --
 
 INSERT INTO `mutasi` (`idMutasi`, `nik`, `ns`, `br`, `ts`, `devisiTujuan`, `tanggalMutasi`) VALUES
-('6209cec15d6eb', '6309020407097001', '001', 'II', 2022, 4, '2022-02-14');
+('62bfe271cabdd', '6309020407097001', '001', 'VII', 2022, 9, '2022-07-01');
 
 -- --------------------------------------------------------
 
@@ -603,7 +600,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `absen_detail`
 --
 ALTER TABLE `absen_detail`
-  MODIFY `idAbsenDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idAbsenDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `departemen`
