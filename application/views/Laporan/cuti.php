@@ -53,12 +53,12 @@ $now = date('Y-m-d');
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
-                                <td><?= $row->namaPegawai ?></td>
-                                <td><?= $row->nik ?></td>
-                                <td><?= $row->namaDevisi ?></td>
-                                <td><?= tgl_indo($row->dariTanggal) . ' s/d ' . tgl_indo($row->sampaiTanggal) ?></td>
-                                <td><?= $row->alasanCuti ?></td>
-                                <td><?= tgl_indo($row->tanggalPengajuan) ?></td>
+                                <td align="center"><?= $row->namaPegawai ?></td>
+                                <td align="center"><?= $row->nik ?></td>
+                                <td align="center"><?= $row->namaDevisi ?></td>
+                                <td align="center"><?= tgl_indo($row->dariTanggal) . ' s/d ' . tgl_indo($row->sampaiTanggal) ?></td>
+                                <td align="center"><?= $row->alasanCuti ?></td>
+                                <td align="center"><?= tgl_indo($row->tanggalPengajuan) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

@@ -50,10 +50,11 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                                 <td><?= $no++ ?></td>
                                 <td><?= $data->namaPegawai ?></td>
                                 <td><?= $data->nik ?></td>
-                                <td><input type="text" class="form-control angka" value="<?= $h ?>" id="hadir<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
-                                <td><input type="text" class="form-control angka" value="<?= $i ?>" id="izin<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
-                                <td><input type="text" class="form-control angka" value="<?= $s ?>" id="sakit<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
-                                <td><input type="text" class="form-control angka" value="<?= $tk ?>" id="tk<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
+                                <!-- <td><input type="text" class="form-control angka" value="<?= $h ?>" id="hadir<?= $data->idPegawai ?>" onChange="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td> -->
+                                <td><input type="text" class="form-control angka" value="<?= $h ?>" id="hadir<?= $data->idPegawai ?>" disabled></td>
+                                <td><input type="text" class="form-control angka" value="<?= $i ?>" id="izin<?= $data->idPegawai ?>" onChange="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
+                                <td><input type="text" class="form-control angka" value="<?= $s ?>" id="sakit<?= $data->idPegawai ?>" onChange="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
+                                <td><input type="text" class="form-control angka" value="<?= $tk ?>" id="tk<?= $data->idPegawai ?>" onChange="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
@@ -66,16 +67,33 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
 
 <script>
     function getKehadiran(idAbsen, idPegawai) {
-        var hadir = $("#hadir" + idPegawai).val();
+        // var hadir = $("#hadir" + idPegawai).val();
         var izin = $("#izin" + idPegawai).val();
         var sakit = $("#sakit" + idPegawai).val();
         var tk = $("#tk" + idPegawai).val();
         $.ajax({
             type: 'Get',
             url: '<?= base_url($linkin . "/insertDetail") ?>',
-            data: 'h=' + hadir + '&i=' + izin + '&s=' + sakit + '&tk=' + tk + '&idAbsen=' + idAbsen + '&idPegawai=' + idPegawai,
+            data: 'i=' + izin + '&s=' + sakit + '&tk=' + tk + '&idAbsen=' + idAbsen + '&idPegawai=' + idPegawai,
             success: function(data) {
                 // $('#devisi').html(data)
+            }
+        })
+    }
+
+    function getHadir(idPegawai, idAbsen) {
+        var izin = $("#izin" + idPegawai).val();
+        var sakit = $("#sakit" + idPegawai).val();
+        var tk = $("#tk" + idPegawai).val();
+        // var kodeJadwal = kode;
+        $.ajax({
+
+            url: '<?= base_url($linkin . "/getHadir") ?>',
+            data: 'i=' + izin + '&s=' + sakit + '&tk=' + tk + '&idPegawai=' + idPegawai + '&idAbsen=' + idAbsen,
+            success: function(data) {
+                var json = data,
+                    obj = JSON.parse(json);
+                $('#hadir' + idPegawai).val(obj.hadir)
             }
         })
     }

@@ -52,11 +52,11 @@ $now = date('Y-m-d');
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
-                                <td><?= $row->namaPegawai ?></td>
-                                <td><?= $row->nik ?></td>
-                                <td><?= $row->namaDevisi ?></td>
-                                <td><?= $row->namaDevisiTujuan ?></td>
-                                <td><?= $row->tanggalMutasi ?></td>
+                                <td align="center"><?= $row->namaPegawai ?></td>
+                                <td align="center"><?= $row->nik ?></td>
+                                <td align="center"><?= $row->namaDevisi ?></td>
+                                <td align="center"><?= $row->namaDevisiTujuan ?></td>
+                                <td align="center"><?= $row->tanggalMutasi ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

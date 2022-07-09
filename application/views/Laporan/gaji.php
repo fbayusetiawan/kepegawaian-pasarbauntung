@@ -51,10 +51,10 @@ $now = date('Y-m-d');
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
-                                <td><?= $row->namaPegawai ?></td>
-                                <td><?= $row->nik ?></td>
-                                <td><?= $row->namaDevisi ?></td>
-                                <td align="right">Rp. <?= number_format(floatval($row->nominalGaji), 0, ',', '.') ?></td>
+                                <td align="center"><?= $row->namaPegawai ?></td>
+                                <td align="center"><?= $row->nik ?></td>
+                                <td align="center"><?= $row->namaDevisi ?></td>
+                                <td align="center">Rp. <?= number_format(floatval($row->nominalGaji), 0, ',', '.') ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

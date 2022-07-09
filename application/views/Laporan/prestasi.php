@@ -55,14 +55,14 @@ $now = date('Y-m-d');
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
-                                <td><?= $row->namaPegawai ?></td>
-                                <td><?= $row->nik ?></td>
-                                <td><?= $row->prestasiDiraih ?></td>
-                                <td><?= $row->kerajinan ?></td>
-                                <td><?= $row->kehadiran ?></td>
-                                <td><?= $row->perilaku ?></td>
-                                <td><?= $row->profesional ?></td>
-                                <td><?= $row->tanggungJawab ?></td>
+                                <td align="center"><?= $row->namaPegawai ?></td>
+                                <td align="center"><?= $row->nik ?></td>
+                                <td align="center"><?= $row->prestasiDiraih ?></td>
+                                <td align="center"><?= $row->kerajinan ?></td>
+                                <td align="center"><?= $row->kehadiran ?></td>
+                                <td align="center"><?= $row->perilaku ?></td>
+                                <td align="center"><?= $row->profesional ?></td>
+                                <td align="center"><?= $row->tanggungJawab ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
