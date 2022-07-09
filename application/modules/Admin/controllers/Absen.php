@@ -71,7 +71,7 @@ class Absen extends CI_Controller
 
     function insertDetail()
     {
-        // $hadir = $_GET['h'];
+        $hadir = $_GET['h'];
         $izin = $_GET['i'];
         $sakit = $_GET['s'];
         $tk = $_GET['tk'];
@@ -86,7 +86,7 @@ class Absen extends CI_Controller
         $object = [
             'idAbsen' => $idAbsen,
             'idPegawai' => $idPegawai,
-            // 'hadir' => $hadir,
+            'hadir' => $hadir,
             'izin' => $izin,
             'sakit' => $sakit,
             'tanpaKeterangan' => $tk,
@@ -98,44 +98,6 @@ class Absen extends CI_Controller
             $this->db->update('absen_detail', $object);
         else :
             $this->db->insert('absen_detail', $object);
-        endif;
-    }
-
-    function getHadir()
-    {
-        // $tahun_akademik = $_GET['tahun_akademik'];
-        $izin = $_GET['i'];
-        $sakit = $_GET['s'];
-        $tk = $_GET['tk'];
-        $idPegawai = $_GET['idPegawai'];
-        $idAbsen = $_GET['idAbsen'];
-        // return $this->db->get('absen')->num_rows();
-        
-        $jumlah = $izin - $sakit - $tk;
-        $hadir = $jumlah;
-        $this->db->where('idPegawai', $idPegawai);
-        $this->db->where('idAbsen', $idAbsen);
-        // $this->db->where('kodeTahun', $tahun_akademik);
-        $data = [
-            'hadir' => $hadir,
-        ];
-        echo json_encode($data);
-        $cek = $this->db->get('absen_detail')->num_rows();
-
-        $object = [
-
-            'hadir' => $hadir,
-
-        ];
-
-        if ($cek <= 0) :
-
-        else :
-            $this->db->where('idPegawai', $idPegawai);
-            $this->db->where('idAbsen', $idAbsen);
-            // $this->db->where('kodeTahun', $tahun_akademik);
-
-            $this->db->update('absen_detail', $object);
         endif;
     }
 
