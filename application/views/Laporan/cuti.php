@@ -43,9 +43,9 @@ $now = date('Y-m-d');
                             <th style="text-align:center; font-size: 18px;">Nama Pegawai</th>
                             <th style="text-align:center; font-size: 18px;">NIK</th>
                             <th style="text-align:center; font-size: 18px;">Devisi</th>
-                            <th style="text-align:center; font-size: 18px;">Tanggal Cuti</th>
-                            <th style="text-align:center; font-size: 18px;">Alasan Cuti</th>
                             <th style="text-align:center; font-size: 18px;">Tanggal Mengajukan</th>
+                            <th style="text-align:center; font-size: 18px;">Alasan Cuti</th>
+                            <th style="text-align:center; font-size: 18px;">Tanggal Cuti</th>
                         </tr>
                     </thead>
 
@@ -56,9 +56,9 @@ $now = date('Y-m-d');
                                 <td align="center"><?= $row->namaPegawai ?></td>
                                 <td align="center"><?= $row->nik ?></td>
                                 <td align="center"><?= $row->namaDevisi ?></td>
-                                <td align="center"><?= tgl_indo($row->dariTanggal) . ' s/d ' . tgl_indo($row->sampaiTanggal) ?></td>
-                                <td align="center"><?= $row->alasanCuti ?></td>
                                 <td align="center"><?= tgl_indo($row->tanggalPengajuan) ?></td>
+                                <td align="center"><?= $row->alasanCuti ?></td>
+                                <td align="center"><?= tgl_indo($row->dariTanggal) . ' s/d ' . tgl_indo($row->sampaiTanggal) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
