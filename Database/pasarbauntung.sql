@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2022 at 03:09 AM
+-- Generation Time: Jul 12, 2022 at 03:03 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -40,8 +40,7 @@ CREATE TABLE `absen` (
 --
 
 INSERT INTO `absen` (`idAbsen`, `bulan`, `tahun`, `jumlahHariKerja`, `tanggalInputAbsen`) VALUES
-('62b5e1d217e2a', 'Juni', 2022, 22, '2022-06-24'),
-('62bfe627dd9de', 'Juli', 2022, 25, '2022-07-02');
+('62c8ef64c9875', 'Juli', 2022, 22, '2022-07-09');
 
 -- --------------------------------------------------------
 
@@ -65,8 +64,8 @@ CREATE TABLE `absen_detail` (
 --
 
 INSERT INTO `absen_detail` (`idAbsenDetail`, `idAbsen`, `idPegawai`, `hadir`, `izin`, `sakit`, `tanpaKeterangan`, `tanggalInput`) VALUES
-(22, '62b5e1d217e2a', '62b5e03e3a6e9', 22, 0, 0, 0, '2022-07-02'),
-(23, '62b5e1d217e2a', '62b5e10690225', 22, 0, 0, 0, '2022-07-02');
+(51, '62c8ef64c9875', '62b5e03e3a6e9', 0, 7, 0, 0, '2022-07-09'),
+(52, '62c8ef64c9875', '62b5e10690225', 0, 2, 0, 0, '2022-07-09');
 
 -- --------------------------------------------------------
 
@@ -244,6 +243,32 @@ INSERT INTO `jabatan` (`idJabatan`, `namaJabatan`) VALUES
 (2, 'Kepala Sub Bagian Umum Kepegawaian'),
 (3, 'Kepala Bidang Perindustrian'),
 (4, 'Kepala Bidang Peningkatan Sarana Distribusi Perdagangan dan Pasar');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kontrak`
+--
+
+CREATE TABLE `kontrak` (
+  `idKontrak` varchar(20) NOT NULL,
+  `idPegawai` varchar(20) NOT NULL,
+  `ns` varchar(3) NOT NULL,
+  `br` varchar(6) NOT NULL,
+  `ts` int(4) NOT NULL,
+  `verify` int(1) NOT NULL,
+  `dariTanggal` date NOT NULL,
+  `sampaiTanggal` date NOT NULL,
+  `berkas` text NOT NULL,
+  `tanggalPengajuan` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kontrak`
+--
+
+INSERT INTO `kontrak` (`idKontrak`, `idPegawai`, `ns`, `br`, `ts`, `verify`, `dariTanggal`, `sampaiTanggal`, `berkas`, `tanggalPengajuan`) VALUES
+('62cd684291a49', '62b5e03e3a6e9', '004', 'VII', 2022, 4, '2022-07-12', '2022-07-13', 'c44d370555f8c4adb90afb3f997cfcfe.pdf', '2022-07-12');
 
 -- --------------------------------------------------------
 
@@ -429,23 +454,22 @@ INSERT INTO `prestasi_detail` (`idPrestasiDetail`, `idPrestasi`, `nik`, `prestas
 
 CREATE TABLE `teguran` (
   `idTeguran` varchar(20) NOT NULL,
+  `nik` varchar(20) NOT NULL,
   `ns` varchar(3) NOT NULL,
   `br` varchar(6) NOT NULL,
   `ts` int(4) NOT NULL,
   `blok` varchar(128) NOT NULL,
   `tanggalTeguran` date NOT NULL,
   `kesalahan` text NOT NULL,
-  `hukuman` text NOT NULL,
-  `biaya` varchar(128) NOT NULL,
-  `terbilang` text NOT NULL
+  `hukuman` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `teguran`
 --
 
-INSERT INTO `teguran` (`idTeguran`, `ns`, `br`, `ts`, `blok`, `tanggalTeguran`, `kesalahan`, `hukuman`, `biaya`, `terbilang`) VALUES
-('62bd81b51d394', '001', 'VI', 2022, 'Blok A', '2022-06-30', 'Melunasi Tunggakan', 'Segera melakukan pembayaran retribusi', '50000000', 'Lima Puluh Juta Rupiah');
+INSERT INTO `teguran` (`idTeguran`, `nik`, `ns`, `br`, `ts`, `blok`, `tanggalTeguran`, `kesalahan`, `hukuman`) VALUES
+('62cd5520305d7', '6309020407097001', '001', 'VII', 2022, '', '2022-07-12', 'Terlambar bekerja', 'Potong Gaji 2 bulan');
 
 -- --------------------------------------------------------
 
@@ -539,6 +563,12 @@ ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`idJabatan`);
 
 --
+-- Indexes for table `kontrak`
+--
+ALTER TABLE `kontrak`
+  ADD PRIMARY KEY (`idKontrak`);
+
+--
 -- Indexes for table `mutasi`
 --
 ALTER TABLE `mutasi`
@@ -600,7 +630,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `absen_detail`
 --
 ALTER TABLE `absen_detail`
-  MODIFY `idAbsenDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idAbsenDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `departemen`
