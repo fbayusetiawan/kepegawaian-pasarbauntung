@@ -10,6 +10,8 @@ class Teguran_m extends CI_Model
 
     function getAllData()
     {
+        $this->db->join('pegawai', 'pegawai.nik = teguran.nik', 'left');
+        $this->db->join('devisi', 'devisi.idDevisi = pegawai.idDevisi', 'left');
         return $this->db->get($this->namaTable)->result();
     }
 
@@ -17,6 +19,10 @@ class Teguran_m extends CI_Model
     function getDataById($Value)
     {
         $this->db->where($this->pk, $Value);
+        $this->db->join('pegawai', 'pegawai.nik = Teguran.nik', 'left');
+        $this->db->join('pangkat', 'pangkat.idPangkat = pegawai.idPangkat', 'left');
+        $this->db->join('golongan', 'golongan.idGolongan = pegawai.idGolongan', 'left');
+        $this->db->join('devisi', 'devisi.idDevisi = pegawai.idDevisi', 'left');
         return $this->db->get($this->namaTable)->row();
     }
 
@@ -25,12 +31,10 @@ class Teguran_m extends CI_Model
     {
         $object = [
             'idTeguran' => uniqid(),
-            'blok' => $this->input->post('blok', TRUE),
+            'nik' => $this->input->post('nik', TRUE),
             'tanggalTeguran' => $this->input->post('tanggalTeguran', TRUE),
             'kesalahan' => $this->input->post('kesalahan', TRUE),
             'hukuman' => $this->input->post('hukuman', TRUE),
-            'biaya' => $this->input->post('biaya', TRUE),
-            'terbilang' => $this->input->post('terbilang', TRUE),
             'ns' => noOtomatis('ns', 'ns', 'Teguran'),
             'br' => getRomawi(date('n')),
             'ts' => date('Y'),
@@ -43,12 +47,10 @@ class Teguran_m extends CI_Model
     function update($Value)
     {
         $object = [
-            'blok' => $this->input->post('blok', TRUE),
+            'nik' => $this->input->post('nik', TRUE),
             'tanggalTeguran' => $this->input->post('tanggalTeguran', TRUE),
             'kesalahan' => $this->input->post('kesalahan', TRUE),
             'hukuman' => $this->input->post('hukuman', TRUE),
-            'biaya' => $this->input->post('biaya', TRUE),
-            'terbilang' => $this->input->post('terbilang', TRUE),
         ];
         $this->db->where($this->pk, $Value);
         $this->db->update($this->namaTable, $object);
