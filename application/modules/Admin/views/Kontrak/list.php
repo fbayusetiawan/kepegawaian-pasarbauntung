@@ -42,7 +42,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                                         <?php if ($row->verify == '2') : ?>
                                             <a href="<?= base_url($linkin . '/aktif/' . $row->idKontrak) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Setujui"><i class="uil uil-puzzle-piece"></i></a>
                                         <?php elseif ($row->verify == '4') : ?>
-                                            <a href="<?= base_url($linkin . '/surat/' . $row->idKontrak) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Cetak Surat"><i class="uil uil-postcard"></i></a>
+                                            <a href="<?= base_url($linkin . '/surat/' . $row->idKontrak) ?>" target="_blank" class="btn btn-info btn-sm" data-toggle="tooltip" title="Cetak Surat"><i class="uil uil-postcard"></i></a>
                                         <?php endif; ?>
                                     </div>
                                 </td>

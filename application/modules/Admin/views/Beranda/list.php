@@ -10,50 +10,7 @@ $user = $this->db->get('pegawai')->row();
             <div class="card-body p-0">
 
                 <h6 class="card-title border-bottom p-3 mb-0 header-title">Selamat Datang <i> </i>di Website SIMPEG UPT Pasar Bauntung Banjarbaru</h6>
-                <div class="row py-1">
-                    <div class="col-xl-3 col-sm-6">
-                        <!-- stat 1 -->
-
-                        <div class="media p-3">
-                            <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
-                            <div class="media-body">
-                                <h4 class="mt-0 mb-0"><?= $pegawai  ?></h4>
-                                <span class="text-muted font-size-13">Total Pegawai</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6">
-                        <!-- stat 2 -->
-                        <div class="media p-3">
-                            <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
-                            <div class="media-body">
-                                <h4 class="mt-0 mb-0"><?= $cuti  ?></h4>
-                                <span class="text-muted">Total Tenaga Honorer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6">
-                        <!-- stat 3 -->
-                        <div class="media p-3">
-                            <i data-feather="grid" class="align-self-center icon-dual icon-lg mr-4"></i>
-                            <div class="media-body">
-                                <h4 class="mt-0 mb-0"><?= $prestasi  ?></h4>
-                                <span class="text-muted">Total Pegawai Berprestasi</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-sm-6">
-                        <!-- stat 3 -->
-                        <div class="media p-3">
-                            <i data-feather="check-square" class="align-self-center icon-dual icon-lg mr-4"></i>
-                            <div class="media-body">
-                                <h4 class="mt-0 mb-0"><?= $naikPangkat  ?></h4>
-                                <span class="text-muted">Total Pegawai Naik Pangkat</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="inbox-rightbar p-4">
                     <div class="mt-2">
                         <hr>
