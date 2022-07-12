@@ -177,6 +177,20 @@ function fd_cuti($val = null)
         return $option[$val];
     endif;
 }
+function fd_kontrak($val = null)
+{
+    $option = [
+        '1' => 'Pengajuan',
+        '2' => 'Direview',
+        '3' => 'Ditolak',
+        '4' => 'Disetujui',
+    ];
+    if (empty($val)) :
+        return $option;
+    else :
+        return $option[$val];
+    endif;
+}
 function fd_role($val = null)
 {
     $option = [

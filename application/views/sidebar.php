@@ -26,9 +26,9 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                 <span data-feather="chevron-down"></span>
             </a>
             <div class="dropdown-menu profile-dropdown">
-                
 
-                
+
+
 
                 <a href="<?= base_url('Auth/Logout') ?>" class="dropdown-item notify-item">
                     <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
@@ -78,12 +78,22 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <span> Kenaikan Pangkat </span>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="<?= base_url('Admin/Naikpegawai') ?>">
-                            <i data-feather="pocket"></i>
-                            <span> Status Pegawai </span>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Perpanjang Kontrak </span>
+                            <span class="menu-arrow"></span>
                         </a>
-                    </li> -->
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= base_url('Admin/Kontrak/New') ?>">Pengajuan Baru</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Admin/Kontrak') ?>">Riwayat</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="<?= base_url('Admin/Prestasi') ?>">
                             <i data-feather="award"></i>
@@ -102,12 +112,6 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <span> Mutasi </span>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="<?= base_url('Admin/Shift') ?>">
-                            <i data-feather="slack"></i>
-                            <span> Shift Pegawai </span>
-                        </a>
-                    </li> -->
                     <li>
                         <a href="javascript: void(0);">
                             <i data-feather="file-text"></i>
@@ -209,6 +213,22 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             </li>
                             <li>
                                 <a href="<?= base_url('Admin/Cuti/riwayat') ?>">Riwayat</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Perpanjang Kontrak </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= base_url('Admin/Kontrak/Pengajuan') ?>">Pengajuan</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Admin/Kontrak/riwayat') ?>">Riwayat</a>
                             </li>
                         </ul>
                     </li>
