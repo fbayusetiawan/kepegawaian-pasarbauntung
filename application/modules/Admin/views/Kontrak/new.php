@@ -33,7 +33,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-<td><?= $row->namaPegawai ?></td>
+                                <td><?= $row->namaPegawai ?></td>
                                 <td><?= tgl_indo($row->tanggalPengajuan) ?></td>
                                 <td><a href="<?= base_url('upload/berkas/' . $row->berkas) ?>">Klik Untuk Download</a></td>
                                 <td><?= tgl_indo($row->dariTanggal) . ' s/d ' . tgl_indo($row->sampaiTanggal) ?> </td>

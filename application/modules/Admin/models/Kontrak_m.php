@@ -23,6 +23,7 @@ class Kontrak_m extends CI_Model
 
     function getAllDataByVerify($Value)
     {
+        $this->db->join('pegawai', 'pegawai.idPegawai = kontrak.idPegawai', 'left');
         $this->db->where('verify', $Value);
         return $this->db->get($this->namaTable)->result();
     }
