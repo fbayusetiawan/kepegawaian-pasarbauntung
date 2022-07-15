@@ -195,7 +195,7 @@ function fd_role($val = null)
 {
     $option = [
         '1' => 'Admin',
-        '2' => 'Keuangan',
+        '2' => 'Pimpinan',
     ];
     if (empty($val)) :
         return $option;

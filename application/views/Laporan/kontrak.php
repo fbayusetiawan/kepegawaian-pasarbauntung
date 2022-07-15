@@ -30,7 +30,7 @@ $now = date('Y-m-d');
 
     <h3>
         <center>
-            PRESTASI PEGAWAI BULAN <?= strtoupper($bulan) ?>
+            PERPANJANGAN KONTRAK PEGAWAI
         </center>
     </h3>
     <div class="row">
@@ -42,45 +42,20 @@ $now = date('Y-m-d');
                             <th style="text-align:center; font-size: 18px;">No</th>
                             <th style="text-align:center; font-size: 18px;">Nama Pegawai</th>
                             <th style="text-align:center; font-size: 18px;">NIK</th>
-                            <th style="text-align:center; font-size: 18px;">Prestasi yang di dapat</th>
-                            <th style="text-align:center; font-size: 18px;">Nilai Kerajinan</th>
-                            <th style="text-align:center; font-size: 18px;">Nilai Kehadiran</th>
-                            <th style="text-align:center; font-size: 18px;">Nilai Perilaku</th>
-                            <th style="text-align:center; font-size: 18px;">Nilai Profesionalisme</th>
-                            <th style="text-align:center; font-size: 18px;">Nilai Tanggung Jawab</th>
-                            <th style="text-align:center; font-size: 18px;">Skor Rata-Rata</th>
-                            <th style="text-align:center; font-size: 18px;">Grade</th>
+                            <th style="text-align:center; font-size: 18px;">Divisi</th>
+                            <!-- <th style="text-align:center; font-size: 18px;">Naik Menjadi</th> -->
+                            <th style="text-align:center; font-size: 18px;">Tanggal Di Tetapkan</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php foreach ($data as $row) : ?>
-                            <?php 
-                               $jumlah = $row->kerajinan + $row->kehadiran + $row->perilaku + $row->profesional + $row->tanggungJawab;
-                               $rerata = $jumlah / 5;
-
-                            if ($rerata >= '9') :
-                                $grade = 'A';
-                            elseif ($rerata >= '7') :
-                                $grade = 'B';
-                            elseif ($rerata >= '5') :
-                                $grade = 'C';
-                            else :
-                                $grade = 'D';
-                            endif;
-                                ?>
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
                                 <td align="center"><?= $row->namaPegawai ?></td>
                                 <td align="center"><?= $row->nik ?></td>
-                                <td align="center"><?= $row->prestasiDiraih ?></td>
-                                <td align="center"><?= $row->kerajinan ?></td>
-                                <td align="center"><?= $row->kehadiran ?></td>
-                                <td align="center"><?= $row->perilaku ?></td>
-                                <td align="center"><?= $row->profesional ?></td>
-                                <td align="center"><?= $row->tanggungJawab ?></td>
-                                <td align="center"><?= $rerata ?></td>
-                                <td align="center"><?= $grade ?></td>
+                                <td align="center"><?= $row->namaDevisi ?></td>
+                                <td align="center"><?= tgl_indo($row->dariTanggal) ?> - <?= tgl_indo($row->sampaiTanggal) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

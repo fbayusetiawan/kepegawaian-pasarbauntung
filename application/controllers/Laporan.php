@@ -67,6 +67,21 @@ class Laporan extends CI_Controller
         $data['data'] = $this->primaryModel->gaji($bulan);
         $this->load->view('laporan/gaji', $data);
     }
+
+
+    function pegawai()
+    {
+        $data['data'] = $this->primaryModel->pegawai();
+        $this->load->view('laporan/pegawai', $data);
+    }
+
+    function kontrak()
+    {
+        $dari = $this->input->post('dari');
+        $sampai = $this->input->post('sampai');
+        $data['data'] = $this->primaryModel->kontrak($dari, $sampai);
+        $this->load->view('laporan/kontrak', $data);
+    }
 }
 
 /* End of file Laporan.php */

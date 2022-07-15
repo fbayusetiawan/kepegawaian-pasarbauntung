@@ -21,6 +21,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             <th>No</th>
                             <th>Nama Pegawai</th>
                             <th>NIK</th>
+                            <th>Status</th>
                             <th class="text-center">Hadir</th>
                             <th class="text-center">Izin</th>
                             <th class="text-center">Sakit</th>
@@ -35,12 +36,12 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             $this->db->where('idAbsen', $row->idAbsen);
                             $hasil = $this->db->get('absen_detail')->row();
                             if (empty($hasil->idAbsenDetail)) :
-                                $h = $row->jumlahHariKerja;
+                                $h = '';
                                 $i = '';
                                 $s = '';
                                 $tk = '';
                             else :
-                                $h = $row->jumlahHariKerja - $hasil->izin - $hasil->sakit - $hasil->tanpaKeterangan;
+                                $h = $hasil->hadir;
                                 $i = $hasil->izin;
                                 $s = $hasil->sakit;
                                 $tk = $hasil->tanpaKeterangan;
@@ -51,7 +52,8 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
 
                                 <td><?= $data->namaPegawai ?></td>
                                 <td><?= $data->nik ?></td>
-                                <td><input type="text" class="form-control angka" value="<?= $h ?>" disabled></td>
+                                <td><?= fd_kepegawaian($data->statusKepegawaian) ?></td>
+                                <td><input type="text" class="form-control angka" value="<?= $h ?>" id="hadir<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
                                 <td><input type="text" class="form-control angka" value="<?= $i ?>" id="izin<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
                                 <td><input type="text" class="form-control angka" value="<?= $s ?>" id="sakit<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>
                                 <td><input type="text" class="form-control angka" value="<?= $tk ?>" id="tk<?= $data->idPegawai ?>" onkeyup="getKehadiran('<?= $row->idAbsen ?>','<?= $data->idPegawai ?>')"></td>

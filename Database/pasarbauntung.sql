@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2022 at 03:03 PM
+-- Generation Time: Jul 15, 2022 at 04:52 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -64,8 +64,8 @@ CREATE TABLE `absen_detail` (
 --
 
 INSERT INTO `absen_detail` (`idAbsenDetail`, `idAbsen`, `idPegawai`, `hadir`, `izin`, `sakit`, `tanpaKeterangan`, `tanggalInput`) VALUES
-(51, '62c8ef64c9875', '62b5e03e3a6e9', 0, 7, 0, 0, '2022-07-09'),
-(52, '62c8ef64c9875', '62b5e10690225', 0, 2, 0, 0, '2022-07-09');
+(51, '62c8ef64c9875', '62b5e03e3a6e9', 15, 7, 0, 0, '2022-07-15'),
+(52, '62c8ef64c9875', '62b5e10690225', 20, 2, 0, 0, '2022-07-15');
 
 -- --------------------------------------------------------
 
@@ -268,7 +268,7 @@ CREATE TABLE `kontrak` (
 --
 
 INSERT INTO `kontrak` (`idKontrak`, `idPegawai`, `ns`, `br`, `ts`, `verify`, `dariTanggal`, `sampaiTanggal`, `berkas`, `tanggalPengajuan`) VALUES
-('62cd684291a49', '62b5e03e3a6e9', '004', 'VII', 2022, 4, '2022-07-12', '2022-07-13', 'c44d370555f8c4adb90afb3f997cfcfe.pdf', '2022-07-12');
+('62cec34f07046', '62b5e03e3a6e9', '004', 'VII', 2022, 4, '2022-07-13', '2023-07-13', 'e646a540ea9101969ed16e0d827ac16f.pdf', '2022-07-13');
 
 -- --------------------------------------------------------
 
@@ -416,7 +416,7 @@ CREATE TABLE `prestasi` (
 --
 
 INSERT INTO `prestasi` (`idPrestasi`, `bulan`, `tahun`) VALUES
-('62b5e270dc119', 'Juni', 2022);
+('62cea8e816a59', 'Juli', 2022);
 
 -- --------------------------------------------------------
 
@@ -444,7 +444,7 @@ INSERT INTO `prestasi_detail` (`idPrestasiDetail`, `idPrestasi`, `nik`, `prestas
 (3, '6209b82b41549', '6309020407097001', 'Juara 1', 10, 9, 9, 9, 9),
 (4, '6209b82b41549', '6309020407097002', 'Juara Olimpiade', 9, 9, 9, 9, 9),
 (5, '62ab222d9cf5a', '6309020407097001', 'Mengembangan Pasar Modern', 9, 9, 9, 9, 9),
-(6, '62b5e270dc119', '6309020407097001', 'Mengembangkan Pasar Modern', 9, 9, 9, 9, 10);
+(7, '62cea8e816a59', '6309020407097001', 'Mengembangkan Pasar Modern', 10, 9, 9, 9, 9);
 
 -- --------------------------------------------------------
 
@@ -496,7 +496,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`idUsers`, `username`, `password`, `roleId`, `namaLengkap`, `email`, `noWa`, `isActive`, `foto`, `dateCreated`) VALUES
 ('5f269419c1055', 'admin', '$2y$10$xNJGSXyRhe6A/fhm3qw8LeDQtO.wn/H59XXpZ3ad81xfxuvBw6UTG', 1, 'Raden M. Naufal', 'radenmnaufalrms@gmail.com', '081223231212', 1, '', 0),
-('62acb3e03bbbe', 'ahim123', '$2y$10$Ey2JU6q6wI1KDBVK7BTPMegL6ejKpX0E/PoNjYy.nuNU2zAAIh3ym', 2, 'Abdur Rohim', 'ahimahim123@gmail.com', '0851-5636-2232', 1, '', 1655485408);
+('62acb3e03bbbe', 'adi123', '$2y$10$xK..s/SswwRCLz0gftzwqe1eDn/DTfSQb/2c0nvFYvYGoeS2DWZUy', 2, 'Adi Royan Pratama, ST', 'adiroyan@gmail.com', '0851-5636-2232', 1, '', 1655485408);
 
 --
 -- Indexes for dumped tables
@@ -566,7 +566,8 @@ ALTER TABLE `jabatan`
 -- Indexes for table `kontrak`
 --
 ALTER TABLE `kontrak`
-  ADD PRIMARY KEY (`idKontrak`);
+  ADD PRIMARY KEY (`idKontrak`),
+  ADD KEY `idPegawai` (`idPegawai`);
 
 --
 -- Indexes for table `mutasi`
@@ -596,7 +597,8 @@ ALTER TABLE `pangkat`
 -- Indexes for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  ADD PRIMARY KEY (`idPegawai`);
+  ADD PRIMARY KEY (`idPegawai`),
+  ADD UNIQUE KEY `nik` (`nik`);
 
 --
 -- Indexes for table `prestasi`
@@ -678,7 +680,17 @@ ALTER TABLE `pangkat`
 -- AUTO_INCREMENT for table `prestasi_detail`
 --
 ALTER TABLE `prestasi_detail`
-  MODIFY `idPrestasiDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idPrestasiDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `kontrak`
+--
+ALTER TABLE `kontrak`
+  ADD CONSTRAINT `kontrak_ibfk_1` FOREIGN KEY (`idPegawai`) REFERENCES `pegawai` (`idPegawai`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

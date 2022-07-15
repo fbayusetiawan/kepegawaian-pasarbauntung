@@ -16,7 +16,7 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
             <?php if ($this->session->userdata('roleId') == '1') : ?>
                 <span class="pro-user-desc">Administrator</span>
             <?php elseif ($this->session->userdata('roleId') == '2') : ?>
-                <span class="pro-user-desc">Keuangan</span>
+                <span class="pro-user-desc">Pimpinan</span>
             <?php elseif ($this->session->userdata('roleId') == '2') : ?>
                 <span class="pro-user-desc">Pegawai</span>
             <?php endif ?>
@@ -78,28 +78,8 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <span> Kenaikan Pangkat </span>
                         </a>
                     </li>
-                    <li>
-                        <a href="javascript: void(0);">
-                            <i data-feather="inbox"></i>
-                            <span> Perpanjang Kontrak </span>
-                            <span class="menu-arrow"></span>
-                        </a>
 
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li>
-                                <a href="<?= base_url('Admin/Kontrak/New') ?>">Pengajuan Baru</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('Admin/Kontrak') ?>">Riwayat</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Admin/Prestasi') ?>">
-                            <i data-feather="award"></i>
-                            <span> Prestasi </span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="<?= base_url('Admin/Teguran') ?>">
                             <i data-feather="meh"></i>
@@ -121,6 +101,9 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
 
                         <ul class="nav-second-level" aria-expanded="false">
                             <li>
+                                <a href="<?= base_url('Laporan/pegawai') ?>">Data Pegawai</a>
+                            </li>
+                            <li>
                                 <a href="#m_absen" data-toggle="modal">Rekap Absen</a>
                             </li>
                             <li>
@@ -135,11 +118,11 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <li>
                                 <a href="#m_mutasi" data-toggle="modal">Mutasi</a>
                             </li>
-                            <!-- <li>
-                                <a href="#m_gaji" data-toggle="modal">Rekap Gaji</a>
-                            </li> -->
                             <li>
                                 <a href="#m_teguran" data-toggle="modal">Teguran</a>
+                            </li>
+                            <li>
+                                <a href="#m_kontrak" data-toggle="modal">Kontrak</a>
                             </li>
                         </ul>
                     </li>
@@ -181,10 +164,88 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
 
                 <?php elseif ($this->session->userdata('roleId') == '2') : ?>
                     <li>
-                        <a href="<?= base_url('Admin/Gaji/') ?>">
-                            <i data-feather="book"></i>
-                            <span> Penggajian </span>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Perpanjang Kontrak </span>
+                            <span class="menu-arrow"></span>
                         </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= base_url('Admin/Kontrak/New') ?>">Pengajuan Baru</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Admin/Kontrak') ?>">Riwayat</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('Admin/Prestasi') ?>">
+                            <i data-feather="award"></i>
+                            <span> Prestasi </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Kepegawaian </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= base_url('Datamaster/Pegawai') ?>">Pegawai</a>
+                            </li>
+                            <!-- <li>
+                                <a href="<?= base_url('Datamaster/Pangkat') ?>">Pangkat</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Golongan') ?>">Golongan</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Departemen') ?>">Departemen</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Devisi') ?>">Divisi</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Jabatan') ?>">Jabatan</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="file-text"></i>
+                            <span> Laporan </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= base_url('Laporan/pegawai') ?>">Data Pegawai</a>
+                            </li>
+                            <li>
+                                <a href="#m_absen" data-toggle="modal">Rekap Absen</a>
+                            </li>
+                            <li>
+                                <a href="#m_cuti" data-toggle="modal">Cuti</a>
+                            </li>
+                            <li>
+                                <a href="#m_kenaikan" data-toggle="modal">Kenaikan Pangkat</a>
+                            </li>
+                            <li>
+                                <a href="#m_prestasi" data-toggle="modal">Prestasi</a>
+                            </li>
+                            <li>
+                                <a href="#m_mutasi" data-toggle="modal">Mutasi</a>
+                            </li>
+                            <li>
+                                <a href="#m_teguran" data-toggle="modal">Teguran</a>
+                            </li>
+                            <li>
+                                <a href="#m_kontrak" data-toggle="modal">Kontrak</a>
+                            </li>
+                        </ul>
                     </li>
                 <?php elseif ($this->session->userdata('roleId') == '3') : ?>
                     <li>
@@ -216,7 +277,7 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li>
                         <a href="javascript: void(0);">
                             <i data-feather="inbox"></i>
@@ -458,6 +519,40 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                         <?=
                         form_dropdown('bulan', bulanIndo(), 'default', 'class="form-control"');
                         ?>
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Print</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="m_kontrak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('laporan/kontrak') ?>" method="post" target="_blank">
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Dari</label>
+                        <input type="date" name="dari" value="<?= $hasilTgl ?>" class="form-control">
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Sampai</label>
+                        <input type="date" name="sampai" value="<?= $tglkemarin ?>" class="form-control">
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>

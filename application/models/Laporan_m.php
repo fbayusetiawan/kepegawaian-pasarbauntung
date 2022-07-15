@@ -65,6 +65,24 @@ class Laporan_m extends CI_Model
         $this->db->join('prestasi', 'prestasi.idPrestasi = prestasi_detail.idPrestasi', 'left');
         return $this->db->get('prestasi_detail')->result();
     }
+
+    function pegawai()
+    {
+        $this->db->join('pangkat', 'pangkat.idPangkat = pegawai.idPangkat', 'left');
+        $this->db->join('golongan', 'golongan.idGolongan = pegawai.idGolongan', 'left');
+        $this->db->join('jabatan', 'jabatan.idJabatan = pegawai.idJabatan', 'left');
+        $this->db->join('devisi', 'devisi.idDevisi = pegawai.idDevisi', 'left');
+        $this->db->join('departemen', 'departemen.idDepartemen = devisi.idDepartemen', 'left');
+        return $this->db->get('pegawai')->result();
+    }
+
+    function kontrak($dari, $sampai)
+    {
+        $this->db->where('tanggalPengajuan BETWEEN "' . $dari . '" AND "' . $sampai . '"');
+        $this->db->join('pegawai', 'pegawai.idPegawai = kontrak.idPegawai', 'left');
+        $this->db->join('devisi', 'devisi.idDevisi = pegawai.idDevisi', 'left');
+        return $this->db->get('kontrak')->result();
+    }
 }
 
 /* End of file Laporan_m.php */

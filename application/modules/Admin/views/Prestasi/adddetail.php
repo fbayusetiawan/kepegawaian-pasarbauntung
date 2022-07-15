@@ -32,7 +32,7 @@ $ctrl = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Tempat, Tangga Lahir</label>
+                        <label for="validationCustom01">Tempat, Tanggal Lahir</label>
                         <input type="text" name="ttl" id="ttl" readonly class="form-control" required>
                         <div class="invalid-feedback">
                             Harus di isi.
@@ -67,28 +67,28 @@ $ctrl = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Nilai kehadiran</label>
+                        <label for="validationCustom01">Nilai Kehadiran</label>
                         <input type="text" name="kehadiran" class="form-control nilai" required>
                         <div class="invalid-feedback">
                             Harus di isi.
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Nilai perilaku</label>
+                        <label for="validationCustom01">Nilai Perilaku</label>
                         <input type="text" name="perilaku" class="form-control nilai" required>
                         <div class="invalid-feedback">
                             Harus di isi.
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Nilai profesionalisme</label>
+                        <label for="validationCustom01">Nilai Profesionalisme</label>
                         <input type="text" name="profesional" class="form-control nilai" required>
                         <div class="invalid-feedback">
                             Harus di isi.
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Nilai Tanggungjawab</label>
+                        <label for="validationCustom01">Nilai Tanggung Jawab</label>
                         <input type="text" name="tanggungJawab" class="form-control nilai" required>
                         <div class="invalid-feedback">
                             Harus di isi.
