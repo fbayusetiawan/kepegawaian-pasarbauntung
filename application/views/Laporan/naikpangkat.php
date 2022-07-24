@@ -42,7 +42,7 @@ $now = date('Y-m-d');
                             <th style="text-align:center; font-size: 18px;">No</th>
                             <th style="text-align:center; font-size: 18px;">Nama Pegawai</th>
                             <th style="text-align:center; font-size: 18px;">NIK</th>
-                            <th style="text-align:center; font-size: 18px;">Devisi</th>
+                            <th style="text-align:center; font-size: 18px;">Divisi</th>
                             <th style="text-align:center; font-size: 18px;">Naik Menjadi</th>
                             <th style="text-align:center; font-size: 18px;">Tanggal Di Tetapkan</th>
                         </tr>

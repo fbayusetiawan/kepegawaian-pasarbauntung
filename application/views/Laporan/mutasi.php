@@ -40,10 +40,10 @@ $now = date('Y-m-d');
                     <thead>
                         <tr>
                             <th style="text-align:center; font-size: 18px;">No</th>
-                            <th style="text-align:center; font-size: 18px;">Nama Pegawai</th>
                             <th style="text-align:center; font-size: 18px;">NIK</th>
-                            <th style="text-align:center; font-size: 18px;">Devisi</th>
-                            <th style="text-align:center; font-size: 18px;">Mutasi Ke Devisi</th>
+                            <th style="text-align:center; font-size: 18px;">Nama Pegawai</th>
+                            <th style="text-align:center; font-size: 18px;">Divisi</th>
+                            <th style="text-align:center; font-size: 18px;">Mutasi Ke Divisi</th>
                             <th style="text-align:center; font-size: 18px;">Tanggal Mutasi</th>
                         </tr>
                     </thead>
@@ -52,11 +52,11 @@ $now = date('Y-m-d');
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
-                                <td align="center"><?= $row->namaPegawai ?></td>
                                 <td align="center"><?= $row->nik ?></td>
+                                <td align="center"><?= $row->namaPegawai ?></td>
                                 <td align="center"><?= $row->namaDevisi ?></td>
                                 <td align="center"><?= $row->namaDevisiTujuan ?></td>
-                                <td align="center"><?= $row->tanggalMutasi ?></td>
+                                <td align="center"><?= tgl_indo($row->tanggalMutasi) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

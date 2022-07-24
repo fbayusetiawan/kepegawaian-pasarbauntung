@@ -20,7 +20,7 @@ $user = $this->db->get('user')->row();
                                 <span class="text-muted font-size-13">Total Pegawai PNS</span>
                             </div>
                         </div>
-                    </div>  
+                    </div>
                     <div class="col-xl-3 col-sm-6">
                         <!-- stat 1 -->
                         <div class="media p-3">
@@ -31,16 +31,16 @@ $user = $this->db->get('user')->row();
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- <div class="col-xl-3 col-sm-6">
+
+                    <div class="col-xl-3 col-sm-6">
                         <div class="media p-3">
                             <i data-feather="grid" class="align-self-center icon-dual icon-lg mr-4"></i>
                             <div class="media-body">
-                                <h4 class="mt-0 mb-0"><?= $prestasi  ?></h4>
-                                <span class="text-muted">Total Pegawai Berprestasi</span>
+                                <h4 class="mt-0 mb-0"><?= $cuti  ?></h4>
+                                <span class="text-muted">Total Pegawai Cuti</span>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <!-- <div class="col-xl-3 col-sm-6">
                         <div class="media p-3">
@@ -83,25 +83,11 @@ $user = $this->db->get('user')->row();
 
 
                         <div class="text-muted">
-                            <!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                penatibus et magnis dis parturient montes, nascetur ridiculus
-                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                                quis, sem.</p>
-                            <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
-                                aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-                                mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
-                                elementum semper nisi.</p>
-                            <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor
-                                eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
-                                dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
-                                nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.
-                                Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
-                                nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-                                condimentum rhoncus, sem quam semper libero, sit amet adipiscing
-                                sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
-                                pulvinar,</p> -->
+                            <img src="<?= base_url() ?>assets/images/dashboard.jpg" class="mx-auto d-block" alt="...">
+                            <br>
+                            <p>Pasar Bauntung Banjarbaru keberadaannya sekitar tahun 1965 yang merupakan pasar tradisional atau pasar sejumput, pasar kaget yang di mana pedagangnya sekitar 20 orang. Pada tahun 1970 dan beriringan dengan dibentuknya Pemerintah Kota Banjarbaru di bawah Pemerintah Kabupaten Banjar Pasar Banjarbaru berkembang menjadi Pasar Kecamatan Banjarbaru yang dikelola dan dipimpin seorang Kepala Pasar.
+                                Seiring dengan perkembangan jumlah pemduduk yang semakin banyak, cakupan pasar menjadi lebih besar dan luas. Pada tahun 1990 Pasar Banjarbaru dilakukan lagi renovasi dan pembangunan Toko-toko dan Los. Pada bulan Februari 2021 Pasar Bauntung Banjarbaru telah resmi dipindahkan ke tempat baru yang beralamat di Jl. RO Ulin, Loktabat Selatan, Kec. Banjarbaru Selatan, Kota Banjar Baru, Kalimantan Selatan. Pasar Bauntung berdiri diatas lahan seluas 3,9 HA dan luas bangunan 1,7 HA. Pasar Bauntung Banjarbaru ini memiliki Ruko ukuran 4x8 sebanyak 28 unit, Toko ukuran 3x6 sebanyak 133 unit, Toko ukuran 3x3 sebanyak 355 unit, Los Kering sebanyak 420 unit, dan Los Basah sebanyak 136 unit.
+                            </p>
                         </div>
 
                         <hr>
