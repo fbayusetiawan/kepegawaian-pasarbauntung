@@ -55,7 +55,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Status Kepegawaian </label>
-                        <?= form_dropdown('statusKepegawaian', fd_kepegawaian(), $row->statusKepegawaian, 'class="form-control"') ?>
+                        <?= form_dropdown('statusKepegawaian', fd_kepegawaian(), $row->statusKepegawaian, 'class="form-control" id="kerja" onchange="getSelesaiKerja()"') ?>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
@@ -130,6 +130,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             Harus diisi!
                         </div>
                     </div>
+                    <div id="selesaikerja"></div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Username <small id="info"></small> </label>
                         <input type="text" class="form-control" value="<?= $row->username ?>" onkeyup="cekUser()" id="username" minlength="6" name="username" required>
@@ -179,6 +180,18 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
             data: "user=" + user,
             success: function(data) {
                 $('#info').html(data)
+            }
+        })
+    }
+
+    function getSelesaiKerja() {
+        var d = $("#kerja").val()
+        $.ajax({
+            type: 'Get',
+            url: '<?= base_url($linkin . "/getSelesaiKerja") ?>',
+            data: 'd=' + d,
+            success: function(data) {
+                $('#selesaikerja').html(data)
             }
         })
     }

@@ -115,6 +115,22 @@ class Pegawai extends CI_Controller
         echo '</div>';
     }
 
+    function getSelesaiKerja()
+    {
+        $d = $_GET['d'];
+        // $this->db->where('idDepartemen', $d);
+        // $data = $this->db->get('devisi')->result();
+        echo '<div class="form-group mb-3">';
+        echo '<label for="validationCustom01">Tanggal Terakhir Bekerja </label>';
+        // echo '<select name="tanggalSelesai"  required class="form-control">';
+        echo '    <input type="date" class="form-control" name="tanggalSelesai">';
+        // echo '</select>';
+        echo '<div class="invalid-feedback">';
+        echo    'Harus dipilih!';
+        echo '</div>';
+        echo '</div>';
+    }
+
     function cekUser()
     {
         $user = $_GET['user'];
